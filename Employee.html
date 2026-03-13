@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>JOB PPRTAL — Browse Employers</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="css/employee.css">ead>
+
+
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="logo">JOB<span>PORTAL</span></a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="findjobs.html">Find Jobs</a>
+    <a href="candidate.html">Candidates</a>
+    <a href="Employee.html" class="on">Employers</a>
+    <a href="contact.html">Contact</a>
+  </div>
+
+   <div class="nav-actions">
+    <a href="login.html" class="btn btn-outline" style="border-color:var(--primary);background:var(--primary-light)">Log In</a>
+    <a href="signup.html" class="btn btn-primary">Sign Up Free</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-inner">
+    <h1>Browse <span>Top Employers</span></h1>
+    <div class="search-bar">
+      <div class="sb-f">
+        <span class="sb-ico"></span>
+        <input type="text" id="heroKw" placeholder="Company name or industry…"/>
+      </div>
+      <div class="sb-div"></div>
+      <div class="sb-f">
+        <span class="sb-ico"></span>
+        <input type="text" id="heroLoc" placeholder="City or Remote…"/>
+      </div>
+      <button class="btn btn-blue" onclick="heroSearch()">Search</button>
+    </div>
+    
+  </div>
+</div>
+
+<!-- LAYOUT -->
+<div class="wrap">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+
+    <div class="fbox">
+      <h4> Search</h4>
+      <input type="text" id="fKw" placeholder="Company or keyword…" oninput="applyFilters()"/>
+    </div>
+
+    <div class="fbox">
+      <h4> Location</h4>
+      <input type="text" id="fLoc" placeholder="City or Remote…" oninput="applyFilters()"/>
+    </div>
+
+    <div class="fbox">
+      <h4> Industry</h4>
+      <div class="cklist">
+        <div class="ck"><label><input type="checkbox" value="Technology" onchange="applyFilters()"> Technology</label><span class="n">14</span></div>
+        <div class="ck"><label><input type="checkbox" value="Finance" onchange="applyFilters()"> Finance</label><span class="n">8</span></div>
+        <div class="ck"><label><input type="checkbox" value="Design" onchange="applyFilters()"> Design</label><span class="n">5</span></div>
+        <div class="ck"><label><input type="checkbox" value="Healthcare" onchange="applyFilters()"> Healthcare</label><span class="n">6</span></div>
+        <div class="ck"><label><input type="checkbox" value="Marketing" onchange="applyFilters()"> Marketing</label><span class="n">7</span></div>
+        <div class="ck"><label><input type="checkbox" value="Education" onchange="applyFilters()"> Education</label><span class="n">4</span></div>
+      </div>
+    </div>
+
+    <div class="fbox">
+      <h4> Company Size</h4>
+      <div class="cklist">
+        <div class="ck"><label><input type="checkbox" value="Startup" onchange="applyFilters()"> Startup (1–50)</label></div>
+        <div class="ck"><label><input type="checkbox" value="Mid-size" onchange="applyFilters()"> Mid-size (51–500)</label></div>
+        <div class="ck"><label><input type="checkbox" value="Large" onchange="applyFilters()"> Large (500+)</label></div>
+        <div class="ck"><label><input type="checkbox" value="MNC" onchange="applyFilters()"> MNC / Global</label></div>
+      </div>
+    </div>
+
+    <div class="fbox">
+      <h4>Status</h4>
+      <div class="cklist">
+        <div class="ck"><label><input type="checkbox" value="Hiring" onchange="applyFilters()"> Actively Hiring</label></div>
+        <div class="ck"><label><input type="checkbox" value="Featured" onchange="applyFilters()"> Featured</label></div>
+      </div>
+    </div>
+
+    <div class="fbox">
+      <h4>Work Mode</h4>
+      <div class="cklist">
+        <div class="ck"><label><input type="checkbox" value="Remote" onchange="applyFilters()"> Remote</label></div>
+        <div class="ck"><label><input type="checkbox" value="Hybrid" onchange="applyFilters()"> Hybrid</label></div>
+        <div class="ck"><label><input type="checkbox" value="On-site" onchange="applyFilters()"> On-site</label></div>
+      </div>
+    </div>
+
+    <button class="reset-btn" onclick="resetAll()">🔄 Reset Filters</button>
+  </aside>
+
+  <!-- MAIN -->
+  <div>
+    <div class="toolbar">
+      <div class="sort-wrap">
+        <label>Sort:</label>
+        <select id="sortSel" onchange="applyFilters()">
+          <option value="name">Name A–Z</option>
+          <option value="jobs">Most Jobs</option>
+          <option value="size">Company Size</option>
+        </select>
+      </div>
+      <div class="vt-wrap">
+        <button class="vt on" id="listVt" onclick="setView('list')" title="List">☰</button>
+        <button class="vt" id="gridVt" onclick="setView('grid')" title="Grid">⊞</button>
+      </div>
+    </div>
+
+    <div id="cardsList" class="cards-wrap"></div>
+    <div id="pag" class="pag"></div>
+
+    <!-- Post Job CTA -->
+    <div class="post-cta">
+      <div class="post-cta-text">
+        <h3>Post a Job Today!</h3>
+      </div>
+      <button class="btn btn-accent" onclick="toast('🚀','Redirecting to Post a Job…')">📢 Post a Job Free</button>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL -->
+<div class="overlay" id="modal">
+  <div class="modal">
+    <div class="m-head">
+      <div class="m-logo" id="mLogo"></div>
+      <div class="m-head-info">
+        <h2 id="mName"></h2>
+        <p id="mIndustry"></p>
+        <div class="m-loc" id="mLoc"></div>
+        <div class="m-hiring" id="mHiring"></div>
+      </div>
+      <button class="m-close" onclick="closeModal()">✕</button>
+    </div>
+    <div class="m-body">
+      <div class="m-sec">
+        <h4>Company Overview</h4>
+        <div class="m-grid">
+          <div class="m-info"><div class="lbl"> Company Size</div><div class="val" id="mSize"></div></div>
+          <div class="m-info"><div class="lbl">Founded</div><div class="val" id="mFounded"></div></div>
+          <div class="m-info"><div class="lbl"> Work Mode</div><div class="val" id="mMode"></div></div>
+          <div class="m-info"><div class="lbl"> Website</div><div class="val" id="mWeb"></div></div>
+        </div>
+      </div>
+      <div class="m-sec">
+        <h4>About Company</h4>
+        <p class="m-about" id="mAbout"></p>
+      </div>
+      <div class="m-sec">
+        <h4>Open Positions (<span id="mJobCount"></span>)</h4>
+        <div id="mJobs"></div>
+      </div>
+      <div class="m-footer">
+        <button class="m-apply" onclick="toast('Viewing all jobs…');closeModal()">💼 View All Jobs</button>
+        <button class="m-follow" onclick="toast('Following '+document.getElementById('mName').textContent+'!');closeModal()">🔔 Follow</button>
+        <button class="m-share" onclick="toast('Link copied!')">🔗</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toastEl"><span id="tIco">✅</span>&nbsp;<span id="tMsg">Done!</span></div>
+
+<!-- FOOTER -->
+<footer>
+ 
+  <div class="f-bottom">
+    <p>© 2026 <b>JobNest</b>. All rights reserved.</p>
+    <div class="f-blinks">
+      <a href="#">Terms</a><a href="#">Privacy</a><a href="#">FAQ</a><a href="#">Contact</a>
+    </div>
+  </div>
+</footer>
+
+
+<script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>JOB PORTAL — Log In to Your Account</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="css/login.css">
+
+</head>
+<body>
+
+<!-- ════ NAVBAR ════ -->
+<nav>
+  <a href="jobnest-homepage.html" class="nav-logo">JOB<span class="dot">PORTAL</span></a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="findjobs.html">Find Jobs</a>
+    <a href="candidate.html">Candidates</a>
+    <a href="Employee.html">Employers</a>
+    <a href="contact.html">Contact</a>
+  </div>
+  <div class="nav-actions">
+    <a href="login.html" class="btn btn-outline" style="border-color:var(--primary);background:var(--primary-light)">Log In</a>
+    <a href="signup.html" class="btn btn-primary">Sign Up Free</a>
+  </div>
+</nav>
+
+<!-- ════ BREADCRUMB ════ -->
+<div class="breadcrumb">
+  <div class="breadcrumb-inner">
+    <a href="#">🏠 Home</a>
+    <span class="sep">›</span>
+    <span class="current">Login</span>
+  </div>
+</div>
+
+
+
+    <!-- RIGHT PANEL -->
+    <div class="login-panel-right">
+
+      <div id="loginForm">
+        <div class="rp-header">
+          <h2>Log In to JOB PORTAL</h2>
+          <p>New to JOB PORTAL? <a href="#">Create a free account →</a></p>
+        </div>
+
+
+
+        <div class="divider"><span>or log in with email</span></div>
+
+        <!-- Form -->
+        <form id="loginFormEl" novalidate onsubmit="handleLogin(event)">
+          <div class="form-group"> 
+            <label for="email">Email Address <span class="req">*</span></label>
+            <div class="input-wrap" id="emailWrap">
+              <span class="input-ico">✉️</span>
+              <input type="email" id="email" placeholder="you@example.com"
+                oninput="validateEmail(this)" autocomplete="email"/>
+            </div>
+            <div class="input-error" id="emailError">Please enter a valid email address.</div>
+          </div>
+
+          <div class="form-group">
+            <label for="password">Password <span class="req">*</span></label>
+            <div class="input-wrap" id="passWrap" style="position:relative">
+              <span class="input-ico">🔒</span>
+              <input type="password" id="password" placeholder="Enter your password"
+                oninput="validatePass(this)" autocomplete="current-password"/>
+              <button type="button" class="pass-toggle" id="passToggle" onclick="togglePass()" title="Show/hide password">👁️</button>
+            </div>
+            <div class="input-error" id="passError">Password must be at least 6 characters.</div>
+          </div>
+
+          <div class="form-row">
+            <label class="checkbox-wrap">
+              <input type="checkbox" id="remember"/>
+              <span>Remember me for 30 days</span>
+            </label>
+            <a href="#" class="forgot-link">Forgot password?</a>
+          </div>
+
+          <button type="submit" class="btn-login" id="loginBtn">
+            <div class="spinner" id="loginSpinner"></div>
+            <span id="loginBtnText">Log In to My Account</span>
+            <span id="loginArrow">→</span>
+          </button>
+        </form>
+
+        <div class="rp-or-register">
+          Don't have an account? <a href="#">Sign up for free</a>
+        </div>
+      </div>
+
+      <!-- Success state -->
+      <div class="login-success" id="loginSuccess">
+        <div class="success-ico">🎉</div>
+        <div class="success-msg">
+          <h3>Welcome back!</h3>
+          <p>You've successfully logged in.<br>Redirecting you to your dashboard…</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</main>
+
+<!-- ════ FOOTER ════ -->
+<footer>
+
+
+  <div class="footer-bottom">
+    <p>© 2026 <strong>JOB PORTAL</strong>. All rights reserved. Made with ♥ for Madhusree.</p>
+    <div class="footer-btm-links">
+      <a href="#">Terms of Use</a>
+      <a href="#">Privacy Policy</a>
+      <a href="#">FAQ</a>
+      <a href="#">Contact</a>
+    </div>
+  </div>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>

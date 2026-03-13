@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>JOB PORTAL — Company Dashboard</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="css/companydashboard.css">
+
+</head>
+<body>
+
+<!-- ── SIDEBAR ── -->
+<aside class="sidebar">
+  <div class="sb-logo">
+    <a href="#">JOB<span>PORTAL</span></a>
+    <div class="sb-tagline">Employer Portal</div>
+  </div>
+
+  <div class="sb-company">
+    <div class="sb-avatar"></div>
+    <div>
+      <div class="sb-cname">Razorpay</div>
+      <div class="sb-plan">✦ Pro Plan</div>
+    </div>
+  </div>
+
+  <nav class="sb-nav">
+    <div class="sb-section">Main</div>
+    <div class="sb-item active"><span class="sb-ico"></span> Dashboard</div>
+    <div class="sb-item" onclick="toast('Jobs page coming soon!')"><span class="sb-ico"></span> Job Listings <span class="sb-badge green">12</span></div>
+    <div class="sb-item" onclick="toast('Applications page coming soon!')"><span class="sb-ico"></span> Applications <span class="sb-badge">47</span></div>
+    <div class="sb-item" onclick="toast('Candidates page coming soon!')"><span class="sb-ico"></span> Candidates</div>
+    <div class="sb-item" onclick="toast('Interviews page coming soon!')"><span class="sb-ico"></span> Interviews <span class="sb-badge">3</span></div>
+
+    <div class="sb-section">Manage</div>
+    <div class="sb-item" onclick="toast('Analytics page coming soon!')"><span class="sb-ico"></span> Analytics</div>
+    <div class="sb-item" onclick="toast('Promotions page coming soon!')"><span class="sb-ico"></span> Promotions</div>
+    <div class="sb-item" onclick="toast('Messages page coming soon!')"><span class="sb-ico"></span> Messages <span class="sb-badge">5</span></div>
+    <div class="sb-item" onclick="toast('Profile page coming soon!')"><span class="sb-ico"></span> Company Profile</div>
+'
+    <div class="sb-section">Account</div>
+    <div class="sb-item" onclick="toast('Settings page coming soon!')"><span class="sb-ico"></span> Settings</div>
+    <div class="sb-item" onclick="toast('Billing page coming soon!')"><span class="sb-ico"></span> Billing & Plans</div>
+    <div class="sb-item" onclick="toast('Help center coming soon!')"><span class="sb-ico"></span> Help Center</div>
+  </nav>
+
+  <div class="sb-bottom">
+    <div class="sb-user" onclick="toast('Profile page coming soon!')">
+      <div class="sb-uavatar">HR</div>
+      <div>
+        <div class="sb-uname">Harshil Mathur</div>
+        <div class="sb-urole">HR Manager</div>
+      </div>
+      <div class="sb-logout">↗</div>
+    </div>
+  </div>
+</aside>
+
+<!-- ── MAIN ── -->
+<div class="main">
+
+  <!-- Topbar -->
+  <header class="topbar">
+    <div class="topbar-title">Dashboard</div>
+    <div class="topbar-search">
+      <span class="s-ico">🔍</span>
+      <input type="text" placeholder="Search candidates, jobs…"/>
+    </div>
+    <div class="tb-right">
+      <div class="tb-icon-btn" onclick="toast('🔔','3 new notifications!')">🔔<div class="tb-notif-dot"></div></div>
+      <div class="tb-icon-btn" onclick="toast('💬','5 new messages!')">💬</div>
+      <button class="tb-post-btn" onclick="toast('📣','Post a Job form coming soon!')">+ Post a Job</button>
+      <div class="tb-avatar" onclick="toast('👤','Profile page coming soon!')">HR</div>
+    </div>
+  </header>
+
+  <!-- Page -->
+  <div class="page">
+
+    <!-- Greeting -->
+    <div class="page-greeting">
+      <div class="greeting-text">
+        <h2>Good Morning, Saumik</h2>
+        <p>Here's what's happening with your hiring today — Wednesday, 11 March 2026.</p>
+      </div>
+      <div class="greeting-actions">
+        <button class="btn btn-ghost" onclick="toast('Downloading report…')">Export Report</button>
+        <button class="btn btn-solid" onclick="toast('Post a Job form coming soon!')">+ Post New Job</button>
+      </div>
+    </div>
+
+    <!-- Stat Cards -->
+    <div class="stats-row">
+      <div class="stat-card blue" style="animation-delay:.05s">
+        <div class="stat-ico blue"></div>
+        <div class="stat-val blue">12</div>
+        <div class="stat-label">Active Job Listings</div>
+        <div class="stat-change up">↑ 2 new this week</div>
+      </div>
+      <div class="stat-card green" style="animation-delay:.1s">
+        <div class="stat-ico green"></div>
+        <div class="stat-val green">247</div>
+        <div class="stat-label">Total Applications</div>
+        <div class="stat-change up">↑ 34 since yesterday</div>
+      </div>
+      <div class="stat-card amber" style="animation-delay:.15s">
+        <div class="stat-ico amber"></div>
+        <div class="stat-val amber">18</div>
+        <div class="stat-label">Interviews Scheduled</div>
+        <div class="stat-change up">↑ 5 this week</div>
+      </div>
+      <div class="stat-card purple" style="animation-delay:.2s">
+        <div class="stat-ico purple"></div>
+        <div class="stat-val purple">6</div>
+        <div class="stat-label">Offers Extended</div>
+        <div class="stat-change down">↓ 1 declined</div>
+      </div>
+    </div>
+
+    <!-- Row 1: Applications + Job Listings -->
+    <div class="grid2" style="margin-bottom:18px">
+
+      <!-- Recent Applications -->
+      <div class="card" style="animation-delay:.2s">
+        <div class="card-head">
+          <h3>Recent Applications</h3>
+          <div class="ch-right">
+            <span class="ch-badge blue">47 New</span>
+            <span class="view-all" onclick="toast('Applications page coming soon!')">View all →</span>
+          </div>
+        </div>
+        <div class="card-body" style="padding:0 20px">
+          <table class="app-table">
+            <thead>
+              <tr>
+                <th>Candidate</th>
+                <th>Applied For</th>
+                <th>Status</th>
+                <th>Date</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><div class="cand-info"><div class="cand-avatar" style="background:linear-gradient(135deg,#1a6fff,#818cf8)">AK</div><div><div class="cand-name">Arjun Kumar</div><div class="cand-role">React Developer</div></div></div></td>
+                <td style="font-size:13px;color:var(--muted)">Senior Frontend Eng.</td>
+                <td><span class="app-status s-new">New</span></td>
+                <td class="app-date">Today</td>
+                <td><div class="app-actions"><button class="act-btn act-view" onclick="toast('👁️','Viewing Arjun\'s profile…')">View</button><button class="act-btn act-shortlist" onclick="toast('⭐','Arjun shortlisted!')">✓</button></div></td>
+              </tr>
+              <tr>
+                <td><div class="cand-info"><div class="cand-avatar" style="background:linear-gradient(135deg,#22c55e,#38bdf8)">PR</div><div><div class="cand-name">Priya Rao</div><div class="cand-role">UI/UX Designer</div></div></div></td>
+                <td style="font-size:13px;color:var(--muted)">Product Designer</td>
+                <td><span class="app-status s-interview">Interview</span></td>
+                <td class="app-date">Yesterday</td>
+                <td><div class="app-actions"><button class="act-btn act-view" onclick="toast('👁️','Viewing Priya\'s profile…')">View</button><button class="act-btn act-shortlist" onclick="toast('⭐','Priya shortlisted!')">✓</button></div></td>
+              </tr>
+              <tr>
+                <td><div class="cand-info"><div class="cand-avatar" style="background:linear-gradient(135deg,#fb923c,#f87171)">SM</div><div><div class="cand-name">Suresh Mishra</div><div class="cand-role">Data Scientist</div></div></div></td>
+                <td style="font-size:13px;color:var(--muted)">ML Engineer</td>
+                <td><span class="app-status s-review">Reviewing</span></td>
+                <td class="app-date">Mar 9</td>
+                <td><div class="app-actions"><button class="act-btn act-view" onclick="toast('👁️','Viewing Suresh\'s profile…')">View</button><button class="act-btn act-shortlist" onclick="toast('⭐','Suresh shortlisted!')">✓</button></div></td>
+              </tr>
+              <tr>
+                <td><div class="cand-info"><div class="cand-avatar" style="background:linear-gradient(135deg,#a78bfa,#38bdf8)">NS</div><div><div class="cand-name">Nisha Singh</div><div class="cand-role">DevOps Engineer</div></div></div></td>
+                <td style="font-size:13px;color:var(--muted)">Cloud Architect</td>
+                <td><span class="app-status s-offer">Offer Sent</span></td>
+                <td class="app-date">Mar 8</td>
+                <td><div class="app-actions"><button class="act-btn act-view" onclick="toast('👁️','Viewing Nisha\'s profile…')">View</button><button class="act-btn act-shortlist" onclick="toast('⭐','Nisha shortlisted!')">✓</button></div></td>
+              </tr>
+              <tr>
+                <td><div class="cand-info"><div class="cand-avatar" style="background:linear-gradient(135deg,#f59e0b,#fbbf24)">RV</div><div><div class="cand-name">Rohan Verma</div><div class="cand-role">Backend Dev</div></div></div></td>
+                <td style="font-size:13px;color:var(--muted)">Python Engineer</td>
+                <td><span class="app-status s-rejected">Rejected</span></td>
+                <td class="app-date">Mar 7</td>
+                <td><div class="app-actions"><button class="act-btn act-view" onclick="toast('👁️','Viewing Rohan\'s profile…')">View</button><button class="act-btn act-shortlist" onclick="toast('⭐','Rohan shortlisted!')">✓</button></div></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Active Jobs + Quick Actions stacked -->
+      <div style="display:flex;flex-direction:column;gap:18px">
+
+        <!-- Active Jobs -->
+        <div class="card" style="animation-delay:.25s">
+          <div class="card-head">
+            <h3>Active Jobs</h3>
+            <span class="view-all" onclick="toast('📋','Jobs page coming soon!')">Manage →</span>
+          </div>
+          <div class="card-body" style="padding:0 20px">
+            <div class="job-list-item">
+              <div class="jli-ico">⚛️</div>
+              <div class="jli-body">
+                <div class="jli-title">Senior React Developer</div>
+                <div class="jli-meta"><span class="jli-status active-tag">Active</span><span>Bangalore</span></div>
+              </div>
+              <div class="jli-count">👥 28</div>
+            </div>
+            <div class="job-list-item">
+              <div class="jli-ico">🎨</div>
+              <div class="jli-body">
+                <div class="jli-title">Product Designer</div>
+                <div class="jli-meta"><span class="jli-status active-tag">Active</span><span>Remote</span></div>
+              </div>
+              <div class="jli-count">👥 14</div>
+            </div>
+            <div class="job-list-item">
+              <div class="jli-ico">🔒</div>
+              <div class="jli-body">
+                <div class="jli-title">Security Engineer</div>
+                <div class="jli-meta"><span class="jli-status paused-tag">Paused</span><span>Bangalore</span></div>
+              </div>
+              <div class="jli-count">👥 9</div>
+            </div>
+            <div class="job-list-item">
+              <div class="jli-ico">📊</div>
+              <div class="jli-body">
+                <div class="jli-title">Data Scientist – ML</div>
+                <div class="jli-meta"><span class="jli-status active-tag">Active</span><span>Hybrid</span></div>
+              </div>
+              <div class="jli-count">👥 31</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quick Actions -->
+        <div class="card" style="animation-delay:.3s">
+          <div class="card-head"><h3>Quick Actions</h3></div>
+          <div class="card-body">
+            <div class="qa-grid">
+              <div class="qa-item" onclick="toast('📣','Post a Job form coming soon!')">
+                <div class="qa-ico">📣</div>
+                <div class="qa-title">Post a Job</div>
+                <div class="qa-desc">Add new listing</div>
+              </div>
+              <div class="qa-item" onclick="toast('🔍','Candidate search coming soon!')">
+                <div class="qa-ico">🔍</div>
+                <div class="qa-title">Search Talent</div>
+                <div class="qa-desc">Browse resumes</div>
+              </div>
+              <div class="qa-item" onclick="toast('📅','Schedule interview coming soon!')">
+                <div class="qa-ico">📅</div>
+                <div class="qa-title">Schedule</div>
+                <div class="qa-desc">Book interview</div>
+              </div>
+              <div class="qa-item" onclick="toast('📊','Reports coming soon!')">
+                <div class="qa-ico">📊</div>
+                <div class="qa-title">Reports</div>
+                <div class="qa-desc">View analytics</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Row 2: Pipeline + Bar Chart + Activity + Calendar -->
+    <div class="grid3" style="margin-bottom:0">
+
+      <!-- Hiring Pipeline -->
+      <div class="card" style="animation-delay:.3s">
+        <div class="card-head"><h3>Hiring Pipeline</h3><span class="ch-badge blue">247 total</span></div>
+        <div class="card-body">
+          <div class="pipeline">
+            <div class="pipe-item">
+              <div class="pipe-label">Applied</div>
+              <div class="pipe-track"><div class="pipe-fill" style="width:100%;background:var(--primary)"></div></div>
+              <div class="pipe-count">247</div>
+            </div>
+            <div class="pipe-item">
+              <div class="pipe-label">Screened</div>
+              <div class="pipe-track"><div class="pipe-fill" style="width:55%;background:#38bdf8"></div></div>
+              <div class="pipe-count">136</div>
+            </div>
+            <div class="pipe-item">
+              <div class="pipe-label">Interview</div>
+              <div class="pipe-track"><div class="pipe-fill" style="width:28%;background:var(--purple)"></div></div>
+              <div class="pipe-count">68</div>
+            </div>
+            <div class="pipe-item">
+              <div class="pipe-label">Assessment</div>
+              <div class="pipe-track"><div class="pipe-fill" style="width:14%;background:var(--amber)"></div></div>
+              <div class="pipe-count">34</div>
+            </div>
+            <div class="pipe-item">
+              <div class="pipe-label">Offer</div>
+              <div class="pipe-track"><div class="pipe-fill" style="width:5%;background:var(--green)"></div></div>
+              <div class="pipe-count">12</div>
+            </div>
+            <div class="pipe-item">
+              <div class="pipe-label">Hired</div>
+              <div class="pipe-track"><div class="pipe-fill" style="width:2%;background:#22c55e"></div></div>
+              <div class="pipe-count">6</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Applications This Week -->
+      <div class="card" style="animation-delay:.35s">
+        <div class="card-head"><h3>Applications / Week</h3><span class="ch-badge green">+12%</span></div>
+        <div class="card-body">
+          <div style="font-size:12px;color:var(--muted);margin-bottom:12px">Daily applications received this week</div>
+          <div class="bar-chart">
+            <div class="bar-wrap">
+              <div class="bar" data-val="18" style="height:45%;background:var(--primary-light);"></div>
+              <span class="bar-label">Mon</span>
+            </div>
+            <div class="bar-wrap">
+              <div class="bar" data-val="24" style="height:60%;background:var(--primary-light);"></div>
+              <span class="bar-label">Tue</span>
+            </div>
+            <div class="bar-wrap">
+              <div class="bar" data-val="31" style="height:78%;background:var(--primary);"></div>
+              <span class="bar-label">Wed</span>
+            </div>
+            <div class="bar-wrap">
+              <div class="bar" data-val="27" style="height:68%;background:var(--primary-light);"></div>
+              <span class="bar-label">Thu</span>
+            </div>
+            <div class="bar-wrap">
+              <div class="bar" data-val="38" style="height:95%;background:var(--primary-light);"></div>
+              <span class="bar-label">Fri</span>
+            </div>
+            <div class="bar-wrap">
+              <div class="bar" data-val="14" style="height:35%;background:var(--primary-light);"></div>
+              <span class="bar-label">Sat</span>
+            </div>
+            <div class="bar-wrap">
+              <div class="bar" data-val="8" style="height:20%;background:var(--primary-light);"></div>
+              <span class="bar-label">Sun</span>
+            </div>
+          </div>
+          <div style="margin-top:14px;padding-top:14px;border-top:1px solid var(--border)">
+            <div class="upcoming-item" style="border:none;padding:0">
+              <div style="flex:1">
+                <div style="font-size:13px;color:var(--muted)">This week total</div>
+                <div style="font-size:1.4rem;font-family:var(--font-head);font-weight:800;color:var(--primary)">160 <span style="font-size:13px;font-family:var(--font-body);font-weight:600;color:var(--green)">↑ 12%</span></div>
+              </div>
+              <div style="text-align:right">
+                <div style="font-size:13px;color:var(--muted)">Avg. daily</div>
+                <div style="font-size:1.1rem;font-family:var(--font-head);font-weight:800;color:var(--text)">22.9</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Activity + Upcoming stacked -->
+      <div style="display:flex;flex-direction:column;gap:18px">
+
+        <!-- Recent Activity -->
+        <div class="card" style="animation-delay:.4s">
+          <div class="card-head"><h3>Recent Activity</h3></div>
+          <div class="card-body" style="padding:0 20px">
+            <div class="activity-item">
+              <div class="act-ico-wrap" style="background:#dcfce7">✅</div>
+              <div><div class="act-text"><strong>Offer accepted</strong> by Nisha Singh for Cloud Architect</div><div class="act-time">2 hours ago</div></div>
+            </div>
+            <div class="activity-item">
+              <div class="act-ico-wrap" style="background:var(--primary-light)">📩</div>
+              <div><div class="act-text"><strong>28 new applications</strong> on Senior React Developer</div><div class="act-time">5 hours ago</div></div>
+            </div>
+            <div class="activity-item">
+              <div class="act-ico-wrap" style="background:#fef3c7">📅</div>
+              <div><div class="act-text"><strong>Interview scheduled</strong> with Priya Rao — Mar 14, 11 AM</div><div class="act-time">Yesterday</div></div>
+            </div>
+            <div class="activity-item" style="border:none">
+              <div class="act-ico-wrap" style="background:#ede9fe">🔖</div>
+              <div><div class="act-text"><strong>Job paused</strong> — Security Engineer (quota filled)</div><div class="act-time">Mar 9</div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Upcoming Interviews -->
+        <div class="card" style="animation-delay:.45s">
+          <div class="card-head"><h3>Upcoming Interviews</h3><span class="view-all" onclick="toast('📅','Interviews page coming soon!')">View all →</span></div>
+          <div class="card-body" style="padding:0 20px">
+            <div class="upcoming-item">
+              <div class="upcoming-date"><div class="ud-day">14</div><div class="ud-mon">Mar</div></div>
+              <div><div class="ui-title">Arjun Kumar — Frontend Eng.</div><div class="ui-meta">🕙 11:00 AM · Google Meet</div></div>
+            </div>
+            <div class="upcoming-item">
+              <div class="upcoming-date"><div class="ud-day">15</div><div class="ud-mon">Mar</div></div>
+              <div><div class="ui-title">Suresh Mishra — ML Engineer</div><div class="ui-meta">🕑 2:30 PM · Zoom</div></div>
+            </div>
+            <div class="upcoming-item" style="border:none">
+              <div class="upcoming-date"><div class="ud-day">17</div><div class="ud-mon">Mar</div></div>
+              <div><div class="ui-title">Anita Joshi — DevOps Eng.</div><div class="ui-meta">🕙 10:00 AM · In-office</div></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast"><span id="tIco">✅</span><span id="tMsg">Done!</span></div>
+
+<script>
+/* ── Tab Switch ── */
+function switchTab(tab){
+  const isLogin = tab === 'login';
+  document.getElementById('tabLogin').classList.toggle('active', isLogin);
+  document.getElementById('tabRegister').classList.toggle('active', !isLogin);
+  document.getElementById('loginSection').style.display = isLogin ? 'block' : 'none';
+  document.getElementById('registerSection').style.display = isLogin ? 'none' : 'block';
+  document.getElementById('successScreen').style.display = 'none';
+}
+
+/* ── Validators ── */
+function setWrap(id, state){
+  const w = document.getElementById(id);
+  w.classList.toggle('valid', state === 'valid');
+  w.classList.toggle('invalid', state === 'invalid');
+}
+function vEmail(){
+  const v = document.getElementById('email').value.trim();
+  const ok = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
+  if(!v){ setWrap('eWrap',''); document.getElementById('eErr').style.display='none'; return false; }
+  setWrap('eWrap', ok?'valid':'invalid');
+  document.getElementById('eErr').style.display = ok?'none':'block';
+  return ok;
+}
+function vPass(){
+  const v = document.getElementById('password').value;
+  const ok = v.length >= 6;
+  if(!v){ setWrap('pWrap',''); document.getElementById('pErr').style.display='none'; return false; }
+  setWrap('pWrap', ok?'valid':'invalid');
+  document.getElementById('pErr').style.display = ok?'none':'block';
+  return ok;
+}
+
+/* ── Toggle PW ── */
+function togglePw(){
+  const inp = document.getElementById('password');
+  const btn = document.getElementById('pwBtn');
+  inp.type = inp.type==='password'?'text':'password';
+  btn.textContent = inp.type==='password'?'👁️':'🙈';
+}
+function toggleRPw(){
+  const inp = document.getElementById('rPass');
+  inp.type = inp.type==='password'?'text':'password';
+}
+
+/* ── Login ── */
+function handleLogin(e){
+  e.preventDefault();
+  const eOk = vEmail(), pOk = vPass();
+  if(!eOk||!pOk) return;
+
+  const btn = document.getElementById('loginBtn');
+  const spin = document.getElementById('loginSpin');
+  const txt = document.getElementById('loginTxt');
+  const arr = document.getElementById('loginArr');
+  btn.disabled=true; btn.style.opacity='.75';
+  spin.style.display='block'; txt.textContent='Logging in…'; arr.style.display='none';
+
+  setTimeout(()=>{
+    document.getElementById('loginSection').style.display='none';
+    document.getElementById('successScreen').style.display='block';
+    btn.disabled=false; btn.style.opacity='1';
+    spin.style.display='none'; txt.textContent='Login to Dashboard'; arr.style.display='';
+  }, 1800);
+}
+
+/* ── Register ── */
+function handleRegister(e){
+  e.preventDefault();
+  const comp = document.getElementById('rComp').value.trim();
+  const email = document.getElementById('rEmail').value.trim();
+  const pass = document.getElementById('rPass').value;
+  const terms = document.getElementById('rTerms').checked;
+  if(!comp||!email||!pass){ alert('Please fill in all required fields.'); return; }
+  if(!terms){ alert('Please accept the Terms & Conditions.'); return; }
+
+  const btn = document.getElementById('regBtn');
+  const spin = document.getElementById('regSpin');
+  const txt = document.getElementById('regTxt');
+  btn.disabled=true; btn.style.opacity='.75';
+  spin.style.display='block'; txt.textContent='Creating account…';
+
+  setTimeout(()=>{
+    document.getElementById('registerSection').style.display='none';
+    document.getElementById('successScreen').style.display='block';
+    document.getElementById('successScreen').querySelector('h3').textContent='Account Created!';
+    document.getElementById('successScreen').querySelector('p').textContent='Your company account is ready.\nStart posting jobs and finding great talent.';
+    btn.disabled=false; btn.style.opacity='1';
+    spin.style.display='none'; txt.textContent='Create Company Account';
+  }, 1800);
+}
+
+/* ── Social ── */
+function handleSocial(btn, name){
+  btn.disabled=true;
+  btn.innerHTML=`<span style="width:14px;height:14px;border:2px solid #c5d8ff;border-top-color:var(--primary);border-radius:50%;animation:spin .65s linear infinite;display:inline-block;vertical-align:middle"></span>&nbsp; Connecting to ${name}…`;
+  setTimeout(()=>{
+    btn.disabled=false;
+    btn.innerHTML=`✅ Connected via ${name}`;
+    btn.style.color='var(--green)';
+    btn.style.borderColor='var(--green)';
+    btn.style.background='#f0fdf4';
+  }, 1600);
+}
+
+function showToast(){
+  alert('Redirecting to your company dashboard…');
+}
+</script>
+<script src="js/script.js"></script>
+</body>
+</html>

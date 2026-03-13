@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>JOB PORTAL — Create Your Free Account</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+
+<link rel="stylesheet" href="css/signup.css">
+</head>
+<body>
+
+<!-- ══ NAVBAR ══ -->
+<nav>
+  <a href="#" class="logo">JOB<span>PORTAL</span></a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="findjobs.html">Find Jobs</a>
+    <a href="candidate.html">Candidates</a>
+    <a href="Employee.html">Employers</a>
+    <a href="contact.html">Contact</a>
+  </div>
+  <div class="nav-ctas">
+    <a href="login.html" class="btn btn-ghost">Log In</a>
+    <a href="signup.html" class="btn btn-solid">Sign Up Free</a>
+  </div>
+</nav>
+
+<!-- ══ BREADCRUMB ══ -->
+<div class="breadcrumb">
+  <div class="bc-inner">
+    <a href="#">🏠 Home</a>
+    <span class="bc-sep">›</span>
+    <span class="bc-cur">Create Account</span>
+  </div>
+</div>
+
+<!-- ══ MAIN ══ -->
+<main>
+  <div class="bg-dots"></div>
+  <div class="bg-blob1"></div>
+  <div class="bg-blob2"></div>
+
+  <div class="card">
+
+    <!-- Card Header -->
+    <div class="card-top">
+      <div class="card-top-text">
+        <h2>Create Your <em>Free</em> Account</h2>
+        <p>Already have an account? <a href="#">Log in here →</a></p>
+      </div>
+      
+    </div>
+
+    <!-- Card Body -->
+    <div class="card-body">
+
+      <!-- Role Tabs -->
+      <div class="tabs">
+        <button class="tab active" onclick="switchTab(this,'candidate')">👤 I'm a Job Seeker</button>
+        <button class="tab" onclick="switchTab(this,'employer')">🏢 I'm an Employer</button>
+      </div>
+
+      <!-- Success Screen (hidden) -->
+      <div class="success-screen" id="successScreen">
+        <div class="s-ico">🎉</div>
+        <h3>Account Created!</h3>
+        <p>Welcome to JOB PORTAL! Your free account is ready.<br>Start exploring thousands of opportunities today.</p>
+        <div class="s-chips">
+          <span class="s-chip chip-green">✓ Email Verified</span>
+          <span class="s-chip chip-blue">✓ Profile Created</span>
+          <span class="s-chip chip-org">✓ Jobs Matched</span>
+        </div>
+        <a href="#" class="s-btn">Go to Dashboard →</a>
+      </div>
+
+      <!-- Form -->
+      <div id="formArea">
+        
+        <div class="divider"><span>or fill in the form below</span></div>
+
+        <!-- Signup Form -->
+        <form id="signupForm" novalidate onsubmit="handleSubmit(event)">
+          <div class="form-grid">
+
+            <!-- First Name -->
+            <div class="fg">
+              <label>First Name <span class="req">*</span></label>
+              <div class="iw" id="fn-w">
+                <span class="i-ico">👤</span>
+                <input type="text" id="firstName" placeholder="John" oninput="vRequired('firstName','fn-w','fn-e')"/>
+              </div>
+              <span class="err" id="fn-e">First name is required.</span>
+            </div>
+
+            <!-- Last Name -->
+            <div class="fg">
+              <label>Last Name <span class="req">*</span></label>
+              <div class="iw" id="ln-w">
+                <span class="i-ico">👤</span>
+                <input type="text" id="lastName" placeholder="Doe" oninput="vRequired('lastName','ln-w','ln-e')"/>
+              </div>
+              <span class="err" id="ln-e">Last name is required.</span>
+            </div>
+
+            <!-- Email -->
+            <div class="fg col-span-2">
+              <label>Email Address <span class="req">*</span></label>
+              <div class="iw" id="em-w">
+                <span class="i-ico">✉️</span>
+                <input type="email" id="email" placeholder="you@example.com" oninput="vEmail()"/>
+              </div>
+              <span class="err" id="em-e">Please enter a valid email address.</span>
+            </div>
+
+            <!-- Phone -->
+            <div class="fg col-span-2">
+              <label>Phone Number</label>
+              <div class="phone-wrap">
+                <select class="phone-code">
+                  <option>🇮🇳 +91</option>
+                  <option>🇺🇸 +1</option>
+                  <option>🇬🇧 +44</option>
+                  <option>🇦🇺 +61</option>
+                  <option>🇩🇪 +49</option>
+                  <option>🇸🇬 +65</option>
+                </select>
+                <div class="iw phone-input">
+                  <span class="i-ico">📞</span>
+                  <input type="tel" id="phone" placeholder="98765 43210"/>
+                </div>
+              </div>
+            </div>
+
+            <!-- Role (job seeker) -->
+            <div class="fg" id="roleField">
+              <label>Job Category <span class="req">*</span></label>
+              <div class="iw" id="cat-w">
+                <span class="i-ico">💼</span>
+                <select id="category" onchange="vSelect('category','cat-w','cat-e')">
+                  <option value="">Select category…</option>
+                  <option>Technology & IT</option>
+                  <option>Design & Creative</option>
+                  <option>Business Development</option>
+                  <option>Finance & Banking</option>
+                  <option>Healthcare & Medical</option>
+                  <option>Marketing & Sales</option>
+                  <option>Restaurant Services</option>
+                  <option>Other</option>
+                </select>
+              </div>
+              <span class="err" id="cat-e">Please select a category.</span>
+            </div>
+
+            <!-- Experience / Company size -->
+            <div class="fg" id="expField">
+              <label>Experience Level</label>
+              <div class="iw">
+                <span class="i-ico">📊</span>
+                <select id="experience">
+                  <option value="">Select level…</option>
+                  <option>Fresher (0–1 yr)</option>
+                  <option>Junior (1–3 yrs)</option>
+                  <option>Mid-level (3–6 yrs)</option>
+                  <option>Senior (6–10 yrs)</option>
+                  <option>Lead / Manager (10+ yrs)</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Password -->
+            <div class="fg col-span-2">
+              <label>Password <span class="req">*</span></label>
+              <div class="iw" id="pw-w" style="position:relative">
+                <span class="i-ico">🔒</span>
+                <input type="password" id="password" placeholder="Create a strong password" oninput="vPassword()"/>
+                <button type="button" class="pw-toggle" id="pwToggle" onclick="togglePw('password','pwToggle')">👁️</button>
+              </div>
+              <div class="pw-strength" id="pwStrength" style="display:none">
+                <div class="pw-bars">
+                  <div class="pw-bar" id="bar1"></div>
+                  <div class="pw-bar" id="bar2"></div>
+                  <div class="pw-bar" id="bar3"></div>
+                  <div class="pw-bar" id="bar4"></div>
+                </div>
+                <div class="pw-label" id="pwLabel">Password strength</div>
+              </div>
+              <span class="err" id="pw-e">Password must be at least 8 characters.</span>
+            </div>
+
+            <!-- Confirm Password -->
+            <div class="fg col-span-2">
+              <label>Confirm Password <span class="req">*</span></label>
+              <div class="iw" id="cp-w" style="position:relative">
+                <span class="i-ico">🔒</span>
+                <input type="password" id="confirmPassword" placeholder="Re-enter your password" oninput="vConfirm()"/>
+                <button type="button" class="pw-toggle" id="cpToggle" onclick="togglePw('confirmPassword','cpToggle')">👁️</button>
+              </div>
+              <span class="err" id="cp-e">Passwords do not match.</span>
+            </div>
+
+            <!-- Terms -->
+            <label class="check-row">
+              <input type="checkbox" id="terms"/>
+              <span>I agree to the <a href="#">Terms & Conditions</a> and <a href="#">Privacy Policy</a> of JobNest.</span>
+            </label>
+
+            <!-- Newsletter -->
+            <label class="check-row" style="grid-column:1/-1">
+              <input type="checkbox" id="newsletter" checked/>
+              <span>Send me job alerts and career tips via email (you can unsubscribe anytime).</span>
+            </label>
+
+            <!-- Submit -->
+            <button type="submit" class="btn-submit" id="submitBtn">
+              <div class="spin" id="submitSpin"></div>
+              <span id="submitText">🚀 Create My Free Account</span>
+            </button>
+          </div>
+        </form>
+
+        <div class="login-prompt">Already have an account? <a href="#">Log in →</a></div>
+      </div>
+
+    </div><!-- /card-body -->
+  </div><!-- /card -->
+</main>
+
+<!-- ══ FOOTER ══ -->
+<footer>
+  
+  <div class="foot-bottom">
+    <p>© 2026 <strong>JOB PORTAL</strong>. All rights reserved. Made with ♥ Madhusree.</p>
+    <div class="foot-btm-links">
+      <a href="#">Terms of Use</a>
+      <a href="#">Privacy Policy</a>
+      <a href="#">FAQ</a>
+      <a href="#">Contact</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  //signup
+/* ── Tab Switch ── */
+function switchTab(el, role){
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+  el.classList.add('active');
+  const catLbl = document.querySelector('#roleField label');
+  const expLbl = document.querySelector('#expField label');
+  if(role === 'employer'){
+    catLbl.childNodes[0].textContent = 'Industry ';
+    expLbl.childNodes[0].textContent = 'Company Size ';
+    document.querySelector('#category').innerHTML = `
+      <option value="">Select industry…</option>
+      <option>Technology</option><option>Finance</option>
+      <option>Healthcare</option><option>Retail</option>
+      <option>Manufacturing</option><option>Education</option><option>Other</option>`;
+    document.querySelector('#experience').innerHTML = `
+      <option value="">Select size…</option>
+      <option>1–10 employees</option><option>11–50 employees</option>
+      <option>51–200 employees</option><option>201–500 employees</option>
+      <option>500+ employees</option>`;
+  } else {
+    catLbl.childNodes[0].textContent = 'Job Category ';
+    expLbl.childNodes[0].textContent = 'Experience Level ';
+    document.querySelector('#category').innerHTML = `
+      <option value="">Select category…</option>
+      <option>Technology & IT</option><option>Design & Creative</option>
+      <option>Business Development</option><option>Finance & Banking</option>
+      <option>Healthcare & Medical</option><option>Marketing & Sales</option>
+      <option>Restaurant Services</option><option>Other</option>`;
+    document.querySelector('#experience').innerHTML = `
+      <option value="">Select level…</option>
+      <option>Fresher (0–1 yr)</option><option>Junior (1–3 yrs)</option>
+      <option>Mid-level (3–6 yrs)</option><option>Senior (6–10 yrs)</option>
+      <option>Lead / Manager (10+ yrs)</option>`;
+  }
+}
+</script>
+
+</body>
+</html>

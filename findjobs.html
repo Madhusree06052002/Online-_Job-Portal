@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>JOB PORTAL — Find Jobs</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+
+<link rel="stylesheet" href="css/findjob.css">
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="logo">JOB<span>PORTAL</span></a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="findjobs.html" class="active">Find Jobs</a>
+    <a href="candidate.html">Candidates</a>
+    <a href="Employee.html">Employers</a>
+   
+    <a href="contact.html">Contact</a>
+  </div>
+  <div class="nav-ctas">
+    <a href="login.html" class="btn btn-ghost">Log In</a>
+    <a href="signup.html" class="btn btn-solid">Sign Up Free</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-inner">
+    <h1>Find Your <em>Perfect Job</em> Today</h1>
+    <p>Search from thousands of live listings across every industry and location.</p>
+    <div class="search-bar">
+      <div class="sf">
+        <span class="sf-ico">🔍</span>
+        <input type="text" id="kw" placeholder="Job title, keyword, or company…"/>
+      </div>
+      <div class="sdiv"></div>
+      <div class="sf">
+        <span class="sf-ico">📍</span>
+        <input type="text" id="loc" placeholder="City, state, or Remote"/>
+      </div>
+      <button class="btn btn-solid" onclick="doSearch()">Search Jobs</button>
+    </div>
+    <div class="popular">
+      <span class="lbl">Popular:</span>
+      <a onclick="quickSearch('Designer')">Designer</a>
+      <a onclick="quickSearch('Developer')">Developer</a>
+      <a onclick="quickSearch('Remote')">Remote</a>
+      <a onclick="quickSearch('Manager')">Manager</a>
+      <a onclick="quickSearch('Analyst')">Analyst</a>
+    </div>
+  </div>
+</div>
+
+<!-- STATS -->
+<div class="stats-strip">
+  <div class="stats-inner">
+
+    <div class="stat-pill"><span class="sv">Free</span><span class="sl">Always Free</span></div>
+  </div>
+</div>
+
+<!-- MAIN -->
+<div class="main">
+
+  <!-- Filter Chips -->
+  <div class="filter-chips">
+    <span class="chip active" onclick="setType(this,'All')">All Jobs</span>
+    <span class="chip" onclick="setType(this,'Full-time')">Full-time</span>
+    <span class="chip" onclick="setType(this,'Part-time')">Part-time</span>
+    <span class="chip" onclick="setType(this,'Remote')">Remote</span>
+    <span class="chip" onclick="setType(this,'Internship')">Internship</span>
+    <span class="chip" onclick="setType(this,'Contract')">Contract</span>
+  </div>
+
+  <!-- Toolbar -->
+  <div class="toolbar">
+    <span class="res-txt" id="resTxt"><strong>16 jobs</strong> found</span>
+    <div class="sort-row">
+      <label>Sort by:</label>
+      <select id="sortSel" onchange="render()">
+        <option value="recent">Most Recent</option>
+        <option value="salary">Highest Salary</option>
+        <option value="az">Title A–Z</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- Jobs -->
+  <div class="jobs-list" id="jobsList"></div>
+
+  <!-- Pagination -->
+  <div class="pagi" id="pagi"></div>
+</div>
+
+<!-- APPLY MODAL -->
+<div class="overlay" id="modal">
+  <div class="modal">
+    <div class="m-head">
+      <h2 id="mTitle">Apply for Job</h2>
+      <p id="mSub">Company · Location</p>
+      <button class="m-close" onclick="closeModal()">✕</button>
+    </div>
+    <div class="m-body">
+      <div class="m-row">
+        <div class="m-f"><label>Full Name *</label><input id="aName" type="text" placeholder="John Doe"/></div>
+        <div class="m-f"><label>Email *</label><input id="aEmail" type="email" placeholder="you@email.com"/></div>
+      </div>
+      <div class="m-row">
+        <div class="m-f"><label>Phone</label><input type="tel" placeholder="+91 98765 43210"/></div>
+        <div class="m-f"><label>LinkedIn</label><input type="url" placeholder="linkedin.com/in/…"/></div>
+      </div>
+      <div class="m-row">
+        <div class="m-f" style="flex:1 1 100%"><label>Cover Letter</label><textarea rows="3" placeholder="Why are you a great fit for this role?"></textarea></div>
+      </div>
+      <div class="m-upload">
+        <div class="u-i">📄</div>
+        <p>Click to upload your Resume / CV</p>
+        <small>PDF, DOC, DOCX — max 5MB</small>
+      </div>
+      <div class="m-foot">
+        <button class="m-cancel" onclick="closeModal()">Cancel</button>
+        <button class="m-submit" onclick="submitApp()">Submit Application →</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast">
+  <span id="tIco">✅</span><span id="tMsg">Done!</span>
+</div>
+
+<!-- FOOTER -->
+<footer>
+ 
+  <div class="foot-bottom">
+    <p>© 2026 <strong>JobNest</strong>. All rights reserved. Made with ♥</p>
+    <div class="fbl">
+      <a href="#">Terms</a><a href="#">Privacy</a><a href="#">FAQ</a><a href="#">Contact</a>
+    </div>
+  </div>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>

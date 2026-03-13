@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>JOB PORTAL— Register Your Company</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="css/company registration.css">ead>
+
+
+
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="logo">JOB<span>PORTAL</span></a>
+  <div class="nav-links">
+    <a href="companydashboard.html">Home</a>
+    <a href="findjobs.html">Find Jobs</a>
+    <a href="candidate.html">Candidates</a>
+    <a href="Employee.html">Employers</a>
+    <a href="contact.html">Contact</a>
+  </div>
+  <div class="nav-ctas">
+    <a href="companylogin.html" class="btn btn-ghost">Company Login</a>
+    <a href="#" class="btn btn-solid">Post a Job</a>
+  </div>
+</nav>
+
+<!-- BREADCRUMB -->
+<div class="breadcrumb">
+  <div class="bc">
+    <a href="#">🏠 Home</a>
+    <span class="sep">›</span>
+    <a href="#">Employers</a>
+    <span class="sep">›</span>
+    <span class="cur">Register Company</span>
+  </div>
+</div>
+
+<!-- HERO STRIP -->
+<div class="hero-strip">
+  <div class="hero-strip-inner">
+    <h1>Register Your <em>Company</em> on JOB PORTAL</h1>
+    <p>Start hiring top talent in minutes — it's completely free to get started.</p>
+    <div class="hero-badges">
+      <span class="h-badge"> Free to Register</span>
+      <span class="h-badge">Post Jobs Instantly</span>
+      <span class="h-badge">Verified & Secure</span>
+    </div>
+  </div>
+</div>
+
+<!-- MAIN -->
+<main>
+  <div class="form-wrap">
+
+    <!-- STEP INDICATOR -->
+    <div class="steps" id="stepsBar">
+      <div class="step active" id="step1">
+        <div class="step-circle">1</div>
+        <div class="step-label">Company Info</div>
+      </div>
+      <div class="step-line" id="line1"></div>
+      <div class="step pending" id="step2">
+        <div class="step-circle">2</div>
+        <div class="step-label">Contact Details</div>
+      </div>
+      <div class="step-line" id="line2"></div>
+      <div class="step pending" id="step3">
+        <div class="step-circle">3</div>
+        <div class="step-label">Account Setup</div>
+      </div>
+    </div>
+
+    <!-- STEP 1 — Company Info -->
+    <div id="formStep1">
+      <div class="card">
+        <div class="card-head">
+          <div class="ch-ico">🏢</div>
+          <div>
+            <div class="ch-title">Company Information</div>
+            <div class="ch-sub">Tell us about your organisation</div>
+          </div>
+        </div>
+        <div class="card-body">
+
+          <!-- Logo Upload -->
+          <div class="fg">
+            <label>Company Logo</label>
+            <div class="logo-upload" onclick="alert('Logo upload coming soon!')">
+              <div class="lu-ico">🖼️</div>
+              <div class="lu-txt">Click to upload your company logo</div>
+              <div class="lu-hint">PNG, JPG or SVG — recommended 200×200px</div>
+            </div>
+          </div>
+
+          <div class="row2">
+            <div class="fg">
+              <label>Company Name <span class="req">*</span></label>
+              <div class="iw" id="w-cname">
+                <span class="ico">🏢</span>
+                <input type="text" id="cname" placeholder="e.g. Acme Technologies" oninput="vReq('cname','w-cname','e-cname')"/>
+              </div>
+              <div class="err" id="e-cname">Company name is required.</div>
+            </div>
+            <div class="fg">
+              <label>Company Type <span class="req">*</span></label>
+              <div class="iw" id="w-ctype">
+                <span class="ico">🏗️</span>
+                <select id="ctype" onchange="vSel('ctype','w-ctype','e-ctype')">
+                  <option value="">Select type…</option>
+                  <option>Private Limited</option>
+                  <option>Public Limited</option>
+                  <option>Startup</option>
+                  <option>MNC</option>
+                  <option>Partnership</option>
+                  <option>Sole Proprietorship</option>
+                  <option>NGO / Non-profit</option>
+                </select>
+                <span class="sel-arr">▾</span>
+              </div>
+              <div class="err" id="e-ctype">Please select company type.</div>
+            </div>
+          </div>
+
+          <div class="row2">
+            <div class="fg">
+              <label>Industry <span class="req">*</span></label>
+              <div class="iw" id="w-ind">
+                <span class="ico">📊</span>
+                <select id="industry" onchange="vSel('industry','w-ind','e-ind')">
+                  <option value="">Select industry…</option>
+                  <option>Technology & IT</option>
+                  <option>Finance & Banking</option>
+                  <option>Healthcare & Medical</option>
+                  <option>Education</option>
+                  <option>Manufacturing</option>
+                  <option>Retail & E-commerce</option>
+                  <option>Media & Entertainment</option>
+                  <option>Real Estate</option>
+                  <option>Logistics & Supply Chain</option>
+                  <option>Other</option>
+                </select>
+                <span class="sel-arr">▾</span>
+              </div>
+              <div class="err" id="e-ind">Please select an industry.</div>
+            </div>
+            <div class="fg">
+              <label>Company Size <span class="req">*</span></label>
+              <div class="iw" id="w-size">
+                <span class="ico">👥</span>
+                <select id="csize" onchange="vSel('csize','w-size','e-size')">
+                  <option value="">Select size…</option>
+                  <option>1–10 employees</option>
+                  <option>11–50 employees</option>
+                  <option>51–200 employees</option>
+                  <option>201–500 employees</option>
+                  <option>501–1000 employees</option>
+                  <option>1000+ employees</option>
+                </select>
+                <span class="sel-arr">▾</span>
+              </div>
+              <div class="err" id="e-size">Please select company size.</div>
+            </div>
+          </div>
+
+          <div class="row2">
+            <div class="fg">
+              <label>Founded Year</label>
+              <div class="iw">
+                <span class="ico">📅</span>
+                <input type="number" id="founded" placeholder="e.g. 2015" min="1800" max="2026"/>
+              </div>
+            </div>
+            <div class="fg">
+              <label>Website URL</label>
+              <div class="iw">
+                <span class="ico"></span>
+                <input type="url" id="website" placeholder="https://yourcompany.com"/>
+              </div>
+            </div>
+          </div>
+
+          <div class="fg">
+            <label>Company Description</label>
+            <div class="iw">
+              <span class="ico" style="top:14px;transform:none">📝</span>
+              <textarea id="cdesc" placeholder="Briefly describe your company, culture, and what makes it a great place to work…"></textarea>
+            </div>
+          </div>
+
+          <div class="nav-btns">
+            <button class="btn-next" onclick="goStep(2)">Next: Contact Details →</button>
+          </div>
+        </div>
+      </div>
+      <div class="login-link">Already have an account? <a href="#">Login here →</a></div>
+    </div>
+
+    <!-- STEP 2 — Contact Details -->
+    <div id="formStep2" style="display:none">
+      <div class="card">
+        <div class="card-head">
+          <div class="ch-ico"></div>
+          <div>
+            <div class="ch-title">Contact Details</div>
+            <div class="ch-sub">How candidates and JobNest can reach you</div>
+          </div>
+        </div>
+        <div class="card-body">
+
+          <div class="row2">
+            <div class="fg">
+              <label>HR / Contact Name <span class="req">*</span></label>
+              <div class="iw" id="w-hrname">
+                <span class="ico">👤</span>
+                <input type="text" id="hrname" placeholder="Full name" oninput="vReq('hrname','w-hrname','e-hrname')"/>
+              </div>
+              <div class="err" id="e-hrname">Contact name is required.</div>
+            </div>
+            <div class="fg">
+              <label>Job Title / Designation</label>
+              <div class="iw">
+                <span class="ico"></span>
+                <input type="text" id="hrTitle" placeholder="e.g. HR Manager"/>
+              </div>
+            </div>
+          </div>
+
+          <div class="fg">
+            <label>Official Email Address <span class="req">*</span></label>
+            <div class="iw" id="w-email">
+              <span class="ico"></span>
+              <input type="email" id="cemail" placeholder="hr@yourcompany.com" oninput="vEmail()"/>
+            </div>
+            <div class="err" id="e-email">Please enter a valid email address.</div>
+          </div>
+
+          <div class="row2">
+            <div class="fg">
+              <label>Phone Number <span class="req">*</span></label>
+              <div class="iw" id="w-phone">
+                <span class="ico">📞</span>
+                <input type="tel" id="cphone" placeholder="+91 98765 43210" oninput="vReq('cphone','w-phone','e-phone')"/>
+              </div>
+              <div class="err" id="e-phone">Phone number is required.</div>
+            </div>
+            <div class="fg">
+              <label>Alternate Phone</label>
+              <div class="iw">
+                <span class="ico"></span>
+                <input type="tel" placeholder="+91 98765 43210"/>
+              </div>
+            </div>
+          </div>
+
+          <div class="row3">
+            <div class="fg">
+              <label>Country <span class="req">*</span></label>
+              <div class="iw" id="w-country">
+                <span class="ico"></span>
+                <select id="country" onchange="vSel('country','w-country','e-country')">
+                  <option value="">Select…</option>
+                  <option>India</option>
+                  <option>United States</option>
+                  <option>United Kingdom</option>
+                  <option>Australia</option>
+                  <option>Canada</option>
+                  <option>Germany</option>
+                  <option>Singapore</option>
+                  <option>UAE</option>
+                </select>
+                <span class="sel-arr">▾</span>
+              </div>
+              <div class="err" id="e-country">Please select country.</div>
+            </div>
+            <div class="fg">
+              <label>State / Province</label>
+              <div class="iw">
+                <span class="ico"></span>
+                <input type="text" placeholder="e.g. Maharashtra"/>
+              </div>
+            </div>
+            <div class="fg">
+              <label>City</label>
+              <div class="iw">
+                <span class="ico">📍</span>
+                <input type="text" placeholder="e.g. Mumbai"/>
+              </div>
+            </div>
+          </div>
+
+          <div class="fg">
+            <label>Office Address</label>
+            <div class="iw">
+              <span class="ico" style="top:14px;transform:none">🏠</span>
+              <textarea id="caddress" placeholder="Full office address including pincode…"></textarea>
+            </div>
+          </div>
+
+          <div class="nav-btns">
+            <button class="btn-back" onclick="goStep(1)">← Back</button>
+            <button class="btn-next" onclick="goStep(3)">Next: Account Setup →</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- STEP 3 — Account Setup -->
+    <div id="formStep3" style="display:none">
+      <div class="card">
+        <div class="card-head">
+          <div class="ch-ico"></div>
+          <div>
+            <div class="ch-title">Account Setup</div>
+            <div class="ch-sub">Secure your company account</div>
+          </div>
+        </div>
+        <div class="card-body">
+
+          <div class="fg">
+            <label>Login Email <span class="req">*</span></label>
+            <div class="iw" id="w-lemail">
+              <span class="ico"></span>
+              <input type="email" id="lemail" placeholder="admin@yourcompany.com" oninput="vLoginEmail()"/>
+            </div>
+            <div class="err" id="e-lemail">Please enter a valid email address.</div>
+          </div>
+
+          <div class="row2">
+            <div class="fg">
+              <label>Password <span class="req">*</span></label>
+              <div class="iw" id="w-pass" style="position:relative">
+                <span class="ico">🔒</span>
+                <input type="password" id="cpass" placeholder="Create a strong password" oninput="vPassword()"/>
+                <button type="button" class="pw-toggle" id="pwBtn" onclick="togglePw()">👁️</button>
+              </div>
+              <div class="pw-str" id="pwStr" style="display:none">
+                <div class="pw-bars">
+                  <div class="pw-bar" id="pb1"></div>
+                  <div class="pw-bar" id="pb2"></div>
+                  <div class="pw-bar" id="pb3"></div>
+                  <div class="pw-bar" id="pb4"></div>
+                </div>
+                <div class="pw-lbl" id="pwLbl">Strength</div>
+              </div>
+              <div class="err" id="e-pass">Password must be at least 8 characters.</div>
+            </div>
+            <div class="fg">
+              <label>Confirm Password <span class="req">*</span></label>
+              <div class="iw" id="w-cpass" style="position:relative">
+                <span class="ico">🔒</span>
+                <input type="password" id="ccpass" placeholder="Re-enter password" oninput="vConfirm()"/>
+                <button type="button" class="pw-toggle" id="cpBtn" onclick="toggleCPw()">👁️</button>
+              </div>
+              <div class="err" id="e-cpass">Passwords do not match.</div>
+            </div>
+          </div>
+
+          <div class="fg">
+            <label>How did you hear about us?</label>
+            <div class="iw">
+              <span class="ico">💬</span>
+              <select>
+                <option value="">Select…</option>
+                <option>Google Search</option>
+                <option>Friend / Colleague</option>
+                <option>Social Media</option>
+                <option>Other</option>
+              </select>
+              <span class="sel-arr">▾</span>
+            </div>
+          </div>
+
+          <label class="chk-row">
+            <input type="checkbox" id="terms"/>
+            <span>I agree to the <a href="#">Terms & Conditions</a> and <a href="#">Privacy Policy</a> of JobNest.</span>
+          </label>
+
+          <label class="chk-row">
+            <input type="checkbox" id="newsletter" checked/>
+            <span>Send me hiring tips, platform updates, and candidate recommendations via email.</span>
+          </label>
+
+          <div class="nav-btns">
+            <button class="btn-back" onclick="goStep(2)">← Back</button>
+            <button class="btn-next" id="submitBtn" onclick="handleSubmit()">
+              <div class="spin" id="submitSpin"></div>
+              <span id="submitTxt">🚀 Create Company Account</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SUCCESS -->
+    <div class="success-card" id="successCard">
+      <div class="s-ico"></div>
+      <h2>Company Registered!</h2>
+      <p>Welcome to JobNest! Your company account is ready.<br>Start posting jobs and connecting with top talent today.</p>
+      <div class="s-chips">
+        <span class="s-chip sc-g">✓ Account Verified</span>
+        <span class="s-chip sc-b">✓ Profile Created</span>
+        <span class="s-chip sc-o">✓ Ready to Hire</span>
+      </div>
+      <div class="s-actions">
+        <button class="s-btn-primary"> Go to Dashboard</button>
+        <button class="s-btn-ghost">Post Your First Job</button>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<!-- FOOTER -->
+<footer>
+ 
+  <div class="foot-bottom">
+    <p>© 2026 <strong>JobNest</strong>. All rights reserved. Made with ♥Madhusree</p>
+    <div class="fbl">
+      <a href="#">Terms</a><a href="#">Privacy</a><a href="#">FAQ</a><a href="#">Contact</a>
+    </div>
+  </div>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>

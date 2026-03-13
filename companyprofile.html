@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>JOB PORTAL — Company Profile</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="css/company profile.css">ead>
+
+
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="logo">JOB<span>PORTAL</span></a>
+  <div class="nav-links">
+    <a href="#">Home</a>
+    <a href="#">Find Jobs</a>
+    <a href="#">Candidates</a>
+    <a href="#" class="active">Employers</a>
+    <a href="#">Contact</a>
+  </div>
+  <div class="nav-ctas">
+    <a href="#" class="btn btn-ghost">Login</a>
+    <a href="#" class="btn btn-solid">Post a Job</a>
+  </div>
+</nav>
+
+<!-- BREADCRUMB -->
+<div class="breadcrumb">
+  <div class="bc">
+    <a href="#"> Home</a><span class="sep">›</span>
+    <a href="#">Companies</a><span class="sep">›</span>
+    <span class="cur">Razorpay</span>
+  </div>
+</div>
+
+<!-- COVER -->
+<div class="cover">
+  <div class="cover-blob1"></div>
+  <div class="cover-blob2"></div>
+</div>
+
+<!-- PROFILE HEADER -->
+<div class="profile-header-wrap">
+  <div class="profile-header">
+    <div class="company-avatar"></div>
+    <div class="company-info">
+      <div class="company-name">
+        Razorpay
+        <span class="verified-badge" style="font-size:12px;margin-left:8px;vertical-align:middle">✅ Verified</span>
+      </div>
+      <div class="company-meta">
+        <span class="cmeta-item">Technology & Fintech</span>
+        <span class="cmeta-item"> Bangalore, India</span>
+        <span class="cmeta-item"> 1,000–5,000 employees</span>
+        <span class="cmeta-item"> <a href="#" style="color:var(--primary)">razorpay.com</a></span>
+      </div>
+    </div>
+    <div class="header-actions">
+      <button class="btn btn-ghost" onclick="toast('🔔','Now following Razorpay!')">🔔 Follow</button>
+      <button class="btn btn-ghost" onclick="toast('🔗','Profile link copied!')">🔗 Share</button>
+      <button class="btn btn-accent" onclick="toast('✉️','Message sent to Razorpay!')">✉️ Contact</button>
+    </div>
+  </div>
+</div>
+
+<!-- TABS -->
+<div class="profile-tabs">
+  <div class="tabs-inner">
+    <button class="ptab active" onclick="switchTab(this,'overview')">Overview</button>
+    <button class="ptab" onclick="switchTab(this,'jobs')">Open Jobs (12)</button>
+    <button class="ptab" onclick="switchTab(this,'team')">Team</button>
+    <button class="ptab" onclick="switchTab(this,'reviews')">Reviews (48)</button>
+    <button class="ptab" onclick="switchTab(this,'photos')">Photos</button>
+  </div>
+</div>
+
+<!-- LAYOUT -->
+<div class="layout">
+
+  <!-- ── LEFT / MAIN ── -->
+  <div>
+
+    <!-- OVERVIEW TAB -->
+    <div id="tab-overview">
+
+      <!-- About -->
+      <div class="card">
+        <div class="card-head"><h3>About Razorpay</h3></div>
+        <div class="card-body">
+          <p class="about-text">Razorpay is India's leading full-stack financial solutions company. We offer cutting-edge payment solutions and banking products that help businesses accept, process, and disburse payments with ease. Trusted by over 8 million businesses, Razorpay is redefining financial infrastructure for the digital era.</p>
+          <p class="about-text">Our engineering team works on complex distributed systems, real-time payment processing, fraud detection ML models, and developer-first APIs that power millions of transactions every day.</p>
+          <div class="info-grid">
+            <div class="info-item"><div class="info-label">Founded</div><div class="info-value">🗓️ 2014</div></div>
+            <div class="info-item"><div class="info-label">Headquarters</div><div class="info-value">📍 Bangalore, India</div></div>
+            <div class="info-item"><div class="info-label">Company Type</div><div class="info-value">🏗️ Private (Series F)</div></div>
+            <div class="info-item"><div class="info-label">Revenue</div><div class="info-value">💰 $500M+ ARR</div></div>
+            <div class="info-item"><div class="info-label">Website</div><div class="info-value"><a href="#">razorpay.com ↗</a></div></div>
+            <div class="info-item"><div class="info-label">Email</div><div class="info-value">✉️ careers@razorpay.com</div></div>
+          </div>
+          <div class="culture-tags">
+            <span class="ctag">🚀 Fast Growth</span>
+            <span class="ctag">🤝 Collaborative</span>
+            <span class="ctag">🏠 Remote Friendly</span>
+           
+          </div>
+        </div>
+      </div>
+
+      <!-- Benefits -->
+      <div class="card">
+        <div class="card-head"><h3>Perks & Benefits</h3></div>
+        <div class="card-body">
+          <div class="benefits-grid">
+            <div class="benefit-item"><span class="benefit-ico"></span><div><div class="benefit-title">Health Insurance</div><div class="benefit-desc">Full family health coverage + dental & vision</div></div></div>
+            <div class="benefit-item"><span class="benefit-ico"></span><div><div class="benefit-title">Remote / Hybrid</div><div class="benefit-desc">Flexible work-from-home policy</div></div></div>
+            <div class="benefit-item"><span class="benefit-ico"></span><div><div class="benefit-title">ESOPs</div><div class="benefit-desc">Equity participation for all full-time employees</div></div></div>
+            <div class="benefit-item"><span class="benefit-ico"></span><div><div class="benefit-title">Learning Budget</div><div class="benefit-desc">₹50K/year for courses & certifications</div></div></div>
+            <div class="benefit-item"><span class="benefit-ico"></span><div><div class="benefit-title">Free Meals</div><div class="benefit-desc">Catered breakfast & lunch at office</div></div></div>
+            <div class="benefit-item"><span class="benefit-ico"></span><div><div class="benefit-title">Fitness Reimbursement</div><div class="benefit-desc">Gym & wellness subscription covered</div></div></div>
+            <div class="benefit-item"><span class="benefit-ico"></span><div><div class="benefit-title">Parental Leave</div><div class="benefit-desc">26 weeks maternity, 4 weeks paternity</div></div></div>
+            <div class="benefit-item"><span class="benefit-ico"></span><div><div class="benefit-title">Annual Retreats</div><div class="benefit-desc">Company-wide offsites & team trips</div></div></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- JOBS TAB -->
+    <div id="tab-jobs" style="display:none">
+      <div class="card">
+        <div class="card-head"><h3>Open Positions at Razorpay</h3><a href="#">View all →</a></div>
+        <div class="card-body" style="padding:0 22px">
+          <div class="job-item">
+            <div class="ji-logo">⚛️</div>
+            <div class="ji-body">
+              <div class="ji-title">Senior Frontend Engineer (React)</div>
+              <div class="ji-meta">
+                <span>📍 Bangalore</span><span>📊 Senior</span>
+                <span class="ji-tag t-full">Full-time</span>
+              </div>
+              <div class="ji-sal">$90,000 – $110,000/yr</div>
+            </div>
+            <button class="ji-apply" onclick="toast('✅','Applied to Senior Frontend Engineer!')">Apply</button>
+          </div>
+          <div class="job-item">
+            <div class="ji-logo">🐍</div>
+            <div class="ji-body">
+              <div class="ji-title">Backend Engineer – Python/Go</div>
+              <div class="ji-meta">
+                <span>📍 Remote</span><span>📊 Mid-level</span>
+                <span class="ji-tag t-remote">Remote</span>
+              </div>
+              <div class="ji-sal">$80,000 – $100,000/yr</div>
+            </div>
+            <button class="ji-apply" onclick="toast('✅','Applied to Backend Engineer!')">Apply</button>
+          </div>
+          <div class="job-item">
+            <div class="ji-logo">🔒</div>
+            <div class="ji-body">
+              <div class="ji-title">Security Engineer – AppSec</div>
+              <div class="ji-meta">
+                <span>📍 Bangalore</span><span>📊 Senior</span>
+                <span class="ji-tag t-full">Full-time</span>
+              </div>
+              <div class="ji-sal">$95,000 – $120,000/yr</div>
+            </div>
+            <button class="ji-apply" onclick="toast('Applied to Security Engineer!')">Apply</button>
+          </div>
+          <div class="job-item">
+            <div class="ji-logo">🎨</div>
+            <div class="ji-body">
+              <div class="ji-title">Product Designer – Growth</div>
+              <div class="ji-meta">
+                <span>📍 Hybrid</span><span>📊 Mid-level</span>
+                <span class="ji-tag t-remote">Remote</span>
+              </div>
+              <div class="ji-sal">$70,000 – $85,000/yr</div>
+            </div>
+            <button class="ji-apply" onclick="toast('Applied to Product Designer!')">Apply</button>
+          </div>
+          <div class="job-item">
+            <div class="ji-logo">📊</div>
+            <div class="ji-body">
+              <div class="ji-title">Data Scientist – Fraud ML</div>
+              <div class="ji-meta">
+                <span>📍 Bangalore</span><span>📊 Senior</span>
+                <span class="ji-tag t-full">Full-time</span>
+              </div>
+              <div class="ji-sal">$100,000 – $130,000/yr</div>
+            </div>
+            <button class="ji-apply" onclick="toast('Applied to Data Scientist!')">Apply</button>
+          </div>
+          <div class="job-item">
+            <div class="ji-logo"></div>
+            <div class="ji-body">
+              <div class="ji-title">Mobile Engineer – iOS</div>
+              <div class="ji-meta">
+                <span>📍 Bangalore</span><span> Junior</span>
+                <span class="ji-tag t-full">Full-time</span>
+              </div>
+              <div class="ji-sal">$60,000 – $80,000/yr</div>
+            </div>
+            <button class="ji-apply" onclick="toast('Applied to iOS Engineer!')">Apply</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TEAM TAB -->
+    <div id="tab-team" style="display:none">
+      <div class="card">
+        <div class="card-head"><h3>Leadership Team</h3></div>
+        <div class="card-body">
+          <div class="team-grid">
+            <div class="team-card">
+              <div class="team-avatar" style="background:linear-gradient(135deg,#1a6fff,#818cf8)">HR</div>
+              <div class="team-name">Harshil Mathur</div>
+              <div class="team-role">CEO & Co-founder</div>
+            </div>
+            <div class="team-card">
+              <div class="team-avatar" style="background:linear-gradient(135deg,#22c55e,#38bdf8)">SK</div>
+              <div class="team-name">Shashank Kumar</div>
+              <div class="team-role">CTO & Co-founder</div>
+            </div>
+            <div class="team-card">
+              <div class="team-avatar" style="background:linear-gradient(135deg,#fb923c,#f87171)">AN</div>
+              <div class="team-name">Arpit Nagar</div>
+              <div class="team-role">VP Engineering</div>
+            </div>
+            <div class="team-card">
+              <div class="team-avatar" style="background:linear-gradient(135deg,#a78bfa,#38bdf8)">PS</div>
+              <div class="team-name">Priya Sharma</div>
+              <div class="team-role">Head of Design</div>
+            </div>
+            <div class="team-card">
+              <div class="team-avatar" style="background:linear-gradient(135deg,#34d399,#a78bfa)">KR</div>
+              <div class="team-name">Kiran Rao</div>
+              <div class="team-role">Chief Product Officer</div>
+            </div>
+            <div class="team-card">
+              <div class="team-avatar" style="background:linear-gradient(135deg,#fbbf24,#f87171)">RM</div>
+              <div class="team-name">Rohit Mehta</div>
+              <div class="team-role">Head of HR</div>
+            </div>
+            <div class="team-card">
+              <div class="team-avatar" style="background:linear-gradient(135deg,#38bdf8,#22c55e)">SJ</div>
+              <div class="team-name">Sneha Joshi</div>
+              <div class="team-role">Chief Marketing Officer</div>
+            </div>
+            <div class="team-card">
+              <div class="team-avatar" style="background:linear-gradient(135deg,#818cf8,#fb923c)">VK</div>
+              <div class="team-name">Vikram Kulkarni</div>
+              <div class="team-role">Head of Finance</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- REVIEWS TAB -->
+    <div id="tab-reviews" style="display:none">
+      <div class="card">
+        <div class="card-head"><h3>Employee Reviews</h3><a href="#" onclick="toast('✍️','Review form coming soon!')">Write a Review</a></div>
+        <div class="card-body" style="padding:0 22px">
+          <div class="review-item">
+            <div class="rv-top">
+              <div class="rv-avatar" style="background:linear-gradient(135deg,#1a6fff,#818cf8)">AK</div>
+              <div><div class="rv-name">Arjun Kumar</div><div class="rv-role">Software Engineer · 2 years</div></div>
+              <div class="rv-stars">★★★★★</div>
+            </div>
+            <div class="rv-title">Amazing place to grow as an engineer</div>
+            <div class="rv-text">The engineering culture here is world-class. Everyone is extremely talented, challenges are meaningful, and you get to work on systems that process billions of dollars in payments.</div>
+            <div class="rv-date">March 2024</div>
+          </div>
+          <div class="review-item">
+            <div class="rv-top">
+              <div class="rv-avatar" style="background:linear-gradient(135deg,#22c55e,#38bdf8)">PR</div>
+              <div><div class="rv-name">Priya Rao</div><div class="rv-role">Product Designer · 1.5 years</div></div>
+              <div class="rv-stars">★★★★☆</div>
+            </div>
+            <div class="rv-title">Great design team, fast-paced environment</div>
+            <div class="rv-text">The design team is collaborative and the design system is mature. Work-life balance can be challenging during product launches but the team is supportive and the perks are excellent.</div>
+            <div class="rv-date">anuary 2024</div>
+          </div>
+          <div class="review-item">
+            <div class="rv-top">
+              <div class="rv-avatar" style="background:linear-gradient(135deg,#fb923c,#fbbf24)">SM</div>
+              <div><div class="rv-name">Suresh Mishra</div><div class="rv-role">Data Analyst · 3 years</div></div>
+              <div class="rv-stars">★★★★★</div>
+            </div>
+            <div class="rv-title">Best data infrastructure I've worked with</div>
+            <div class="rv-text">Access to rich data, modern tooling, and a team that really values data-driven decisions. The learning curve is steep but the growth you get in return is unparalleled.</div>
+            <div class="rv-date">November 2023</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PHOTOS TAB -->
+    <div id="tab-photos" style="display:none">
+      <div class="card">
+        <div class="card-head"><h3>Office & Culture Photos</h3></div>
+        <div class="card-body">
+          <div class="photos-grid">
+            <div class="photo-box"></div>
+            <div class="photo-box"></div>
+            <div class="photo-box">/div>
+            <div class="photo-box"></div>
+            <div class="photo-box"></div>
+            <div class="photo-box"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ── SIDEBAR ── -->
+  <div class="sidebar">
+
+    <!-- Quick Stats -->
+    <div class="card">
+      <div class="card-head"><h3>Company Stats</h3></div>
+      <div class="card-body" style="padding:8px 22px">
+        <div class="stat-list">
+          <div class="stat-row"><span class="sr-label">💼 Open Jobs</span><span class="sr-value" style="color:var(--primary)">12</span></div>
+          <div class="stat-row"><span class="sr-label">👥 Employees</span><span class="sr-value">1,000–5,000</span></div>
+          <div class="stat-row"><span class="sr-label"> Rating</span><span class="sr-value" style="color:#f59e0b">4.4 / 5.0</span></div>
+          <div class="stat-row"><span class="sr-label"> Reviews</span><span class="sr-value">48</span></div>
+          <div class="stat-row"><span class="sr-label"> Founded</span><span class="sr-value">2014</span></div>
+          <div class="stat-row"><span class="sr-label"> Locations</span><span class="sr-value">3 Cities</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Rating Breakdown -->
+    <div class="card">
+      <div class="card-head"><h3>Employee Rating</h3></div>
+      <div class="card-body">
+        <div class="rating-big">
+          <div class="rating-num">4.4</div>
+          <div class="rating-stars">★★★★½</div>
+          <div class="rating-count">Based on 48 reviews</div>
+        </div>
+        <div class="rating-bars">
+          <div class="rbar-row"><span class="rbar-lbl">5</span><div class="rbar-track"><div class="rbar-fill" style="width:60%"></div></div><span class="rbar-count">29</span></div>
+          <div class="rbar-row"><span class="rbar-lbl">4</span><div class="rbar-track"><div class="rbar-fill" style="width:30%"></div></div><span class="rbar-count">14</span></div>
+          <div class="rbar-row"><span class="rbar-lbl">3</span><div class="rbar-track"><div class="rbar-fill" style="width:8%"></div></div><span class="rbar-count">4</span></div>
+          <div class="rbar-row"><span class="rbar-lbl">2</span><div class="rbar-track"><div class="rbar-fill" style="width:2%"></div></div><span class="rbar-count">1</span></div>
+          <div class="rbar-row"><span class="rbar-lbl">1</span><div class="rbar-track"><div class="rbar-fill" style="width:0%"></div></div><span class="rbar-count">0</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Social Links -->
+    <div class="card">
+      <div class="card-head"><h3>Follow Us</h3></div>
+      <div class="card-body">
+        <div class="social-links">
+          <div class="social-link" onclick="toast('🌐','Opening website…')"><span class="s-ico">🌐</span>razorpay.com</div>
+          
+        </div>
+      </div>
+    </div>
+
+    <!-- Similar Companies -->
+    <div class="card">
+      <div class="card-head"><h3>Similar Companies</h3></div>
+      <div class="card-body" style="padding:8px 22px">
+        <div class="sim-item" onclick="toast('Opening Paytm profile…')">
+          <div class="sim-logo"></div>
+          <div><div class="sim-name">Paytm</div><div class="sim-jobs">8 open jobs</div></div>
+        </div>
+        <div class="sim-item" onclick="toast('Opening PhonePe profile…')">
+          <div class="sim-logo"></div>
+          <div><div class="sim-name">PhonePe</div><div class="sim-jobs">14 open jobs</div></div>
+        </div>
+        <div class="sim-item" onclick="toast('Opening CRED profile…')">
+          <div class="sim-logo"></div>
+          <div><div class="sim-name">CRED</div><div class="sim-jobs">6 open jobs</div></div>
+        </div>
+        <div class="sim-item" onclick="toast('Opening BharatPe profile…')">
+          <div class="sim-logo"></div>
+          <div><div class="sim-name">BharatPe</div><div class="sim-jobs">5 open jobs</div></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast"><span id="tIco"></span><span id="tMsg">Done!</span></div>
+
+<!-- FOOTER -->
+<footer>
+
+  <div class="foot-bottom">
+    <p>© 2026 <strong>JobNest</strong>. All rights reserved. Made with ♥Madhusree</p>
+    <div class="fbl"><a href="#">Terms</a><a href="#">Privacy</a><a href="#">FAQ</a><a href="#">Contact</a></div>
+  </div>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>

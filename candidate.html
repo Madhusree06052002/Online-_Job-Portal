@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>JOB PORTAL — Browse Candidates</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="css/candidate.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav>
+  <a href="#" class="logo">JOB<span>PORTAL</span></a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <!-- <a href="findjobs.html">Find Job/.s</a> -->
+    <a href="candidate.html" class="on">Candidates</a>
+    <a href="Employee.html">Employers</a>
+   
+    <a href="contact.html">Contact</a>
+  </div>
+
+   <div class="nav-actions">
+    <a href="login.html" class="btn btn-outline" style="border-color:var(--primary);background:var(--primary-light)">Log In</a>
+    <a href="signup.html" class="btn btn-primary">Sign Up Free</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-inner">
+    <h1>Browse <span>Top Candidates</span></h1>
+    <p>Find talented professionals ready to join your team today.</p>
+    <div class="search-bar">
+      <div class="sb-f">
+        <span class="sb-ico"></span>
+        <input type="text" id="heroKw" placeholder="Name, skill, or job title…"/>
+      </div>
+      <div class="sb-div"></div>
+      <div class="sb-f">
+        <span class="sb-ico"></span>
+        <input type="text" id="heroLoc" placeholder="City or Remote…"/>
+      </div>
+      <button class="btn btn-blue" onclick="heroSearch()">Search</button>
+    </div>
+    
+  </div>
+</div>
+
+<!-- LAYOUT -->
+<div class="wrap">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+
+    <div class="fbox">
+      <h4> Search</h4>
+      <input type="text" id="fKw" placeholder="Skill or title…" oninput="applyFilters()"/>
+    </div>
+
+    <div class="fbox">
+      <h4> Location</h4>
+      <input type="text" id="fLoc" placeholder="City or Remote…" oninput="applyFilters()"/>
+    </div>
+
+    <div class="fbox">
+      <h4>Category</h4>
+      <div class="cklist">
+        <div class="ck"><label><input type="checkbox" value="Technology" onchange="applyFilters()"> Technology</label><span class="n">12</span></div>
+        <div class="ck"><label><input type="checkbox" value="Design" onchange="applyFilters()"> Design</label><span class="n">8</span></div>
+        <div class="ck"><label><input type="checkbox" value="Finance" onchange="applyFilters()"> Finance</label><span class="n">6</span></div>
+        <div class="ck"><label><input type="checkbox" value="Marketing" onchange="applyFilters()"> Marketing</label><span class="n">5</span></div>
+        <div class="ck"><label><input type="checkbox" value="Healthcare" onchange="applyFilters()"> Healthcare</label><span class="n">4</span></div>
+      </div>
+    </div>
+
+    <div class="fbox">
+      <h4> Experience</h4>
+      <div class="cklist">
+        <div class="ck"><label><input type="checkbox" value="Fresher" onchange="applyFilters()"> Fresher</label></div>
+        <div class="ck"><label><input type="checkbox" value="Junior" onchange="applyFilters()"> Junior (1–3 yrs)</label></div>
+        <div class="ck"><label><input type="checkbox" value="Mid-level" onchange="applyFilters()"> Mid-level (3–6 yrs)</label></div>
+        <div class="ck"><label><input type="checkbox" value="Senior" onchange="applyFilters()"> Senior (6+ yrs)</label></div>
+      </div>
+    </div>
+
+    <div class="fbox">
+      <h4>✅ Availability</h4>
+      <div class="cklist">
+        <div class="ck"><label><input type="checkbox" value="Available" onchange="applyFilters()"> Available Now</label></div>
+        <div class="ck"><label><input type="checkbox" value="Open" onchange="applyFilters()"> Open to Offers</label></div>
+        <div class="ck"><label><input type="checkbox" value="Busy" onchange="applyFilters()"> Currently Busy</label></div>
+      </div>
+    </div>
+
+    <div class="fbox">
+      <h4> Work Mode</h4>
+      <div class="cklist">
+        <div class="ck"><label><input type="checkbox" value="Remote" onchange="applyFilters()"> Remote</label></div>
+        <div class="ck"><label><input type="checkbox" value="On-site" onchange="applyFilters()"> On-site</label></div>
+        <div class="ck"><label><input type="checkbox" value="Hybrid" onchange="applyFilters()"> Hybrid</label></div>
+      </div>
+    </div>
+
+    <button class="reset-btn" onclick="resetAll()">🔄 Reset Filters</button>
+  </aside>
+
+  <!-- CANDIDATES AREA -->
+  <div>
+    <!-- Toolbar -->
+    <div class="toolbar">
+      <div class="sort-wrap">
+        <label>Sort:</label>
+        <select id="sortSel" onchange="applyFilters()">
+          <option value="name">Name A–Z</option>
+          <option value="exp">Most Experienced</option>
+          <option value="sal">Expected Salary ↑</option>
+        </select>
+      </div>
+      <div class="vt-wrap">
+        <button class="vt on" id="listVt" onclick="setView('list')" title="List">☰</button>
+        <button class="vt" id="gridVt" onclick="setView('grid')" title="Grid"></button>
+      </div>
+    </div>
+
+    <!-- Cards -->
+    <div id="cardsList" class="cards-wrap"></div>
+
+    <!-- Pagination -->
+    <div id="pag" class="pag"></div>
+  </div>
+</div>
+
+<!-- PROFILE MODAL -->
+<div class="overlay" id="modal">
+  <div class="modal">
+    <div class="m-head">
+      <div class="m-av" id="mAv"></div>
+      <div class="m-head-info">
+        <h2 id="mName"></h2>
+        <p id="mRole"></p>
+        <div class="m-status" id="mStatus"></div>
+      </div>
+      <button class="m-close" onclick="closeModal()">✕</button>
+    </div>
+    <div class="m-body">
+      <div class="m-section">
+        <h4>Overview</h4>
+        <div class="m-row">
+          <div class="m-info-item"><div class="i-lbl"> Location</div><div class="i-val" id="mLoc"></div></div>
+          <div class="m-info-item"><div class="i-lbl"> Experience</div><div class="i-val" id="mExp"></div></div>
+          <div class="m-info-item"><div class="i-lbl"> Expected</div><div class="i-val" id="mSal"></div></div>
+          <div class="m-info-item"><div class="i-lbl"> Work Mode</div><div class="i-val" id="mMode"></div></div>
+        </div>
+      </div>
+      <div class="m-section">
+        <h4>Skills</h4>
+        <div class="m-skills" id="mSkills"></div>
+      </div>
+      <div class="m-section">
+        <h4>Experience</h4>
+        <div id="mExps"></div>
+      </div>
+      <div class="m-section">
+        <h4>About</h4>
+        <p class="m-about" id="mAbout"></p>
+      </div>
+      <div class="m-footer">
+        <button class="m-msg" onclick="toast('✉️','Message sent!');closeModal()">✉️ Send Message</button>
+        <button class="m-hire" onclick="toast('🤝','Hire request sent!');closeModal()">🤝 Hire Now</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toastEl"><span id="tIco">✅</span>&nbsp;<span id="tMsg">Done!</span></div>
+
+<!-- FOOTER -->
+<footer>
+  
+  <div class="f-bottom">
+    <p>© 2026 <b>JobNest</b>. All rights reserved.</p>
+    <div class="f-blinks">
+      <a href="#">Terms</a><a href="#">Privacy</a><a href="#">FAQ</a><a href="#">Contact</a>
+    </div>
+  </div>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>

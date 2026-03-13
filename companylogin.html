@@ -1,0 +1,197 @@
+!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>JOB PORTAL— Company Login</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="css/companylogin.css">ead>
+
+
+
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="logo">JOB<span>PORTAL</span></a>
+  <div class="nav-links">
+    <a href="#">Home</a>
+    <a href="#">Find Jobs</a>
+    <a href="#">Candidates</a>
+    <a href="#">Employers</a>
+    <a href="#">Contact</a>
+  </div>
+  <div class="nav-ctas">
+    <a href="#" class="btn btn-ghost">Job Seeker Login</a>
+    <a href="#" class="btn btn-solid">Post a Job</a>
+  </div>
+</nav>
+
+<!-- BREADCRUMB -->
+<div class="breadcrumb">
+  <div class="bc">
+    <a href="#"> Home</a>
+    <span class="sep">›</span>
+    <a href="#">Employers</a>
+    <span class="sep">›</span>
+    <span class="cur">Company Login</span>
+  </div>
+</div>
+
+<!-- MAIN -->
+<main>
+  <div class="bg-dots"></div>
+
+  <div class="card">
+
+    <!-- Card Top -->
+    <div class="card-top">
+      <div class="company-icon"></div>
+      <h2>Company Portal</h2>
+      <p><a href="#">Register your company →</a></p>
+    </div>
+
+    <!-- Tabs -->
+    <div class="tab-row">
+      <button class="tab-btn active" id="tabLogin" onclick="switchTab('login')"> Login</button>
+      <button class="tab-btn" id="tabRegister" onclick="switchTab('register')">Register</button>
+    </div>
+
+    <!-- Body -->
+    <div class="card-body">
+
+      <!-- SUCCESS SCREEN -->
+      <div class="success" id="successScreen">
+        <div class="s-ico"></div>
+        <h3>Welcome Back!</h3>
+        <p>You're logged in to your company dashboard.<br>Manage jobs, candidates, and more.</p>
+        <div class="s-chips">
+          <span class="s-chip sc-g">✓ Verified Company</span>
+          <span class="s-chip sc-b">✓ Dashboard Ready</span>
+        </div>
+        <button class="s-btn" onclick="showToast()">Go to Dashboard →</button>
+      </div>
+
+      <!-- LOGIN FORM -->
+      <div id="loginSection">
+        <!-- Social -->
+        <div class="social-btns">
+          <button class="soc-btn" onclick="handleSocial(this,'Google')">
+            <span class="soc-ico"></span> Continue with Google
+          </button>
+          
+        </div>
+        <div class="divider"><span>or login with email</span></div>
+
+        <!-- Form -->
+        <form onsubmit="handleLogin(event)" novalidate>
+          <div class="fg">
+            <label>Company Email <span class="req">*</span></label>
+            <div class="iw" id="eWrap">
+              <span class="ico"></span>
+              <input type="email" id="email" placeholder="company@example.com" oninput="vEmail()"/>
+            </div>
+            <div class="err-msg" id="eErr">Please enter a valid email address.</div>
+          </div>
+
+          <div class="fg">
+            <label>Password <span class="req">*</span></label>
+            <div class="iw" id="pWrap" style="position:relative">
+              <span class="ico"></span>
+              <input type="password" id="password" placeholder="Enter your password" oninput="vPass()"/>
+              <button type="button" class="pw-toggle" id="pwBtn" onclick="togglePw()">👁️</button>
+            </div>
+            <div class="err-msg" id="pErr">Password must be at least 6 characters.</div>
+          </div>
+
+          <div class="opt-row">
+            <label class="chk">
+              <input type="checkbox" id="remember"/>
+              <span>Remember me</span>
+            </label>
+            <a href="#" class="forgot">Forgot password?</a>
+          </div>
+
+          <button type="submit" class="btn-submit" id="loginBtn">
+            <div class="spin" id="loginSpin"></div>
+            <span id="loginTxt">Login to Dashboard</span>
+            <span id="loginArr">→</span>
+          </button>
+        </form>
+
+        <div class="register-link">
+          Don't have an account? <a href="#" onclick="switchTab('register');return false">Register your company</a>
+        </div>
+      </div>
+
+      <!-- REGISTER FORM -->
+      <div id="registerSection" style="display:none">
+        <form onsubmit="handleRegister(event)" novalidate>
+          <div class="reg-grid">
+            <div class="fg">
+              <label>Company Name <span class="req">*</span></label>
+              <div class="iw"><span class="ico"></span>
+                <input type="text" id="rComp" placeholder="Acme Inc."/>
+              </div>
+            </div>
+            <div class="fg">
+              <label>Industry <span class="req">*</span></label>
+              <div class="iw"><span class="ico"></span>
+                <input type="text" id="rInd" placeholder="e.g. Technology"/>
+              </div>
+            </div>
+            <div class="fg full">
+              <label>Work Email <span class="req">*</span></label>
+              <div class="iw"><span class="ico"></span>
+                <input type="email" id="rEmail" placeholder="hr@company.com"/>
+              </div>
+            </div>
+            <div class="fg">
+              <label>Password <span class="req">*</span></label>
+              <div class="iw" style="position:relative"><span class="ico"></span>
+                <input type="password" id="rPass" placeholder="Create password"/>
+                <button type="button" class="pw-toggle" onclick="toggleRPw()"></button>
+              </div>
+            </div>
+            <div class="fg">
+              <label>Phone</label>
+              <div class="iw"><span class="ico"></span>
+                <input type="tel" placeholder="+91 98765 43210"/>
+              </div>
+            </div>
+            <div class="fg full">
+              <label class="chk" style="align-items:flex-start">
+                <input type="checkbox" id="rTerms" style="margin-top:2px"/>
+                <span style="font-size:13px;color:var(--muted)">I agree to the <a href="#" style="color:var(--primary);font-weight:600">Terms & Conditions</a> and <a href="#" style="color:var(--primary);font-weight:600">Privacy Policy</a></span>
+              </label>
+            </div>
+          </div>
+          <button type="submit" class="btn-submit" id="regBtn" style="margin-top:4px">
+            <div class="spin" id="regSpin"></div>
+            <span id="regTxt">Create Company Account</span>
+          </button>
+        </form>
+        <div class="register-link">
+          Already registered? <a href="#" onclick="switchTab('login');return false">Login here</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</main>
+
+<!-- FOOTER -->
+<footer>
+ 
+  <div class="foot-bottom">
+    <p>© 2026 <strong>JobNest</strong>. All rights reserved. Made with ♥ Madhusree</p>
+    <div class="fbl">
+      <a href="#">Terms</a><a href="#">Privacy</a><a href="#">FAQ</a><a href="#">Contact</a>
+    </div>
+  </div>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>TalentBridge — Job Portal Dashboard</title>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/dashboard.css">ead>
+  
+    
+  
+</head>
+<body>
+
+  <!-- ════════════════════════════════
+       HEADER
+  ════════════════════════════════ -->
+  <header>
+    <a href="#" class="logo">
+      <div class="logo-icon"></div>
+      <span class="logo-name">Talent<span>Bridge</span></span>
+    </a>
+
+    <div class="header-search">
+      <span class="search-ico"></span>
+      <input type="text" placeholder="Search jobs, companies, skills…" />
+    </div>
+
+    <nav>
+      <a href="index.html" class="active">Dashboard</a>
+      <a href="findjobs.html">Find Jobs</a>
+      <a href="candidate.html">Candidates</a>
+      <a href="companydashboard.html">Companies</a>
+  
+    </nav>
+
+    <div class="header-actions">
+      <div class="btn-notify">
+        🔔
+        <span class="notif-dot"></span>
+      </div>
+      <div class="avatar">AK</div>
+    </div>
+  </header>
+
+  <!-- ════════════════════════════════
+       LAYOUT
+  ════════════════════════════════ -->
+  <div class="layout">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <span class="sidebar-label">Overview</span>
+      <a class="sidebar-item active" href="#">
+        <span class="ico"></span> Dashboard
+      </a>
+      <a class="sidebar-item" href="#">
+        <span class="ico"></span> Job Listings
+        <span class="sidebar-badge">24</span>
+      </a>
+      <a class="sidebar-item" href="#">
+        <span class="ico"></span> Candidates
+        <span class="sidebar-badge purple">148</span>
+      </a>
+      <a class="sidebar-item" href="#">
+        <span class="ico"></span> Companies
+      </a>
+
+      <span class="sidebar-label">Recruitment</span>
+      <a class="sidebar-item" href="#">
+        <span class="ico"></span> Applications
+        <span class="sidebar-badge orange">7</span>
+      </a>
+      <a class="sidebar-item" href="#">
+        <span class="ico"></span> Interviews
+      </a>
+      <a class="sidebar-item" href="#">
+        <span class="ico"></span> Shortlisted
+      </a>
+      <a class="sidebar-item" href="#">
+        <span class="ico"></span> Offers Sent
+      </a>
+
+      <span class="sidebar-label">Account</span>
+      <a class="sidebar-item" href="#">
+        <span class="ico"></span> Settings
+      </a>
+      <a class="sidebar-item" href="#">
+        <span class="ico"></span> Help Center
+      </a>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main>
+
+      <!-- Page Header -->
+      <div class="page-header">
+        <div>
+          <h1>Good morning, Madhusree</h1>
+          <p>Here's what's happening with your portal today.</p>
+        </div>
+        <div style="display:flex;gap:10px;">
+          <button class="btn btn-outline">Export</button>
+          <button class="btn btn-primary">Post a Job</button>
+        </div>
+      </div>
+
+      <!-- Stat Cards -->
+      <div class="stats-grid">
+        <div class="stat-card blue">
+          <div class="stat-top">
+            <div class="stat-icon"></div>
+            <span class="stat-change up">↑ 12%</span>
+          </div>
+          <div class="stat-val">1,284</div>
+          <div class="stat-label">Total Job Listings</div>
+        </div>
+        <div class="stat-card purple">
+          <div class="stat-top">
+            <div class="stat-icon"></div>
+            <span class="stat-change up">↑ 8%</span>
+          </div>
+          <div class="stat-val">38,920</div>
+          <div class="stat-label">Registered Candidates</div>
+        </div>
+        <div class="stat-card green">
+          <div class="stat-top">
+            <div class="stat-icon"></div>
+            <span class="stat-change up">↑ 23%</span>
+          </div>
+          <div class="stat-val">4,671</div>
+          <div class="stat-label">Successful Hires</div>
+        </div>
+        <div class="stat-card orange">
+          <div class="stat-top">
+            <div class="stat-icon"></div>
+            <span class="stat-change down">↓ 3%</span>
+          </div>
+          <div class="stat-val">892</div>
+          <div class="stat-label">Pending Applications</div>
+        </div>
+      </div>
+
+      <!-- Two Column: Jobs + Applications -->
+      <div class="three-col">
+
+        <!-- Recent Applications -->
+        <div class="card">
+          <div class="card-header">
+            <span class="card-title">Recent Applications</span>
+            <a href="#" class="card-link">View all →</a>
+          </div>
+          <table class="app-table">
+            <thead>
+              <tr>
+                <th>Applicant</th>
+                <th>Role</th>
+                <th>Date</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><div class="applicant-cell"><div class="mini-avatar" style="background:linear-gradient(135deg,#38bdf8,#818cf8)">PR</div><div><div style="font-weight:600;font-size:13px">Priya Rao</div><div style="font-size:11px;color:var(--muted)">priya@email.com</div></div></div></td>
+                <td style="color:var(--soft)">UX Designer</td>
+                <td style="color:var(--muted);font-size:12px">Mar 5</td>
+                <td><span class="status-pill pill-interview">Interview</span></td>
+              </tr>
+              <tr>
+                <td><div class="applicant-cell"><div class="mini-avatar" style="background:linear-gradient(135deg,#34d399,#38bdf8)">KM</div><div><div style="font-weight:600;font-size:13px">Karan Mehta</div><div style="font-size:11px;color:var(--muted)">karan@email.com</div></div></div></td>
+                <td style="color:var(--soft)">Backend Eng.</td>
+                <td style="color:var(--muted);font-size:12px">Mar 5</td>
+                <td><span class="status-pill pill-review">In Review</span></td>
+              </tr>
+              <tr>
+                <td><div class="applicant-cell"><div class="mini-avatar" style="background:linear-gradient(135deg,#fb923c,#f87171)">SA</div><div><div style="font-weight:600;font-size:13px">Sneha Agarwal</div><div style="font-size:11px;color:var(--muted)">sneha@email.com</div></div></div></td>
+                <td style="color:var(--soft)">Product Mgr.</td>
+                <td style="color:var(--muted);font-size:12px">Mar 4</td>
+                <td><span class="status-pill pill-hired">Hired</span></td>
+              </tr>
+              <tr>
+                <td><div class="applicant-cell"><div class="mini-avatar" style="background:linear-gradient(135deg,#818cf8,#c084fc)">VN</div><div><div style="font-weight:600;font-size:13px">Vikram Nair</div><div style="font-size:11px;color:var(--muted)">vikram@email.com</div></div></div></td>
+                <td style="color:var(--soft)">Data Analyst</td>
+                <td style="color:var(--muted);font-size:12px">Mar 4</td>
+                <td><span class="status-pill pill-new">New</span></td>
+              </tr>
+              <tr>
+                <td><div class="applicant-cell"><div class="mini-avatar" style="background:linear-gradient(135deg,#38bdf8,#34d399)">DK</div><div><div style="font-weight:600;font-size:13px">Divya Kumar</div><div style="font-size:11px;color:var(--muted)">divya@email.com</div></div></div></td>
+                <td style="color:var(--soft)">DevOps Eng.</td>
+                <td style="color:var(--muted);font-size:12px">Mar 3</td>
+                <td><span class="status-pill pill-rejected">Rejected</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Activity Feed -->
+        <div class="card">
+          <div class="card-header">
+            <span class="card-title">Live Activity</span>
+          </div>
+          <div class="activity-item">
+            <div class="activity-dot" style="background:var(--success)"></div>
+            <div>
+              <div class="activity-text"><strong>Sneha Agarwal</strong> accepted the offer for Product Manager at Razorpay.</div>
+              <div class="activity-time">2 min ago</div>
+            </div>
+          </div>
+          <div class="activity-item">
+            <div class="activity-dot" style="background:var(--accent)"></div>
+            <div>
+              <div class="activity-text"><strong>TechMahindra</strong> posted a new job: Senior React Developer.</div>
+              <div class="activity-time">15 min ago</div>
+            </div>
+          </div>
+          <div class="activity-item">
+            <div class="activity-dot" style="background:var(--warn)"></div>
+            <div>
+              <div class="activity-text"><strong>Priya Rao</strong> has been moved to interview stage.</div>
+              <div class="activity-time">42 min ago</div>
+            </div>
+          </div>
+          <div class="activity-item">
+            <div class="activity-dot" style="background:var(--accent2)"></div>
+            <div>
+              <div class="activity-text"><strong>12 new candidates</strong> registered from IIT placement drive.</div>
+              <div class="activity-time">1 hr ago</div>
+            </div>
+          </div>
+          <div class="activity-item">
+            <div class="activity-dot" style="background:var(--danger)"></div>
+            <div>
+              <div class="activity-text">Job listing <strong>"iOS Engineer"</strong> expired. Renewal needed.</div>
+              <div class="activity-time">3 hr ago</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Two Column: Jobs + Skills -->
+      <div class="two-col">
+
+        <!-- Job Listings -->
+        <div class="card">
+          <div class="card-header">
+            <span class="card-title">Active Listings</span>
+            <a href="#" class="card-link">Manage all →</a>
+          </div>
+          <div class="job-item">
+            <div class="job-logo"></div>
+            <div class="job-info">
+              <div class="job-title">Senior Frontend Engineer</div>
+              <div class="job-meta">Razorpay · Bangalore · ₹28–40 LPA</div>
+            </div>
+            <span class="job-tag tag-full">Full-time</span>
+          </div>
+          <div class="job-item">
+            <div class="job-logo"></div>
+            <div class="job-info">
+              <div class="job-title">Machine Learning Engineer</div>
+              <div class="job-meta">Flipkart · Remote · ₹30–50 LPA</div>
+            </div>
+            <span class="job-tag tag-remote">Remote</span>
+          </div>
+          <div class="job-item">
+            <div class="job-logo"></div>
+            <div class="job-info">
+              <div class="job-title">UI/UX Designer</div>
+              <div class="job-meta">Swiggy · Mumbai · ₹18–26 LPA</div>
+            </div>
+            <span class="job-tag tag-full">Full-time</span>
+          </div>
+          <div class="job-item">
+            <div class="job-logo"></div>
+            <div class="job-info">
+              <div class="job-title">Cloud Architect</div>
+              <div class="job-meta">CRED · Hyderabad · ₹45–65 LPA</div>
+            </div>
+            <span class="job-tag tag-cont">Contract</span>
+          </div>
+          <div class="job-item">
+            <div class="job-logo"></div>
+            <div class="job-info">
+              <div class="job-title">iOS Developer</div>
+              <div class="job-meta">Zomato · Gurgaon · ₹22–32 LPA</div>
+            </div>
+            <span class="job-tag tag-part">Part-time</span>
+          </div>
+        </div>
+
+        <!-- Top Skills & Quick Actions -->
+        <div style="display:flex;flex-direction:column;gap:1.25rem;">
+          <div class="card">
+            <div class="card-header">
+              <span class="card-title">Top Skills in Demand</span>
+            </div>
+            <div class="skill-row">
+              <div class="skill-top"><span>React / Next.js</span><span>87%</span></div>
+              <div class="skill-bar"><div class="skill-fill" style="width:87%;background:linear-gradient(90deg,var(--accent),#0ea5e9)"></div></div>
+            </div>
+            <div class="skill-row">
+              <div class="skill-top"><span>Python / ML</span><span>74%</span></div>
+              <div class="skill-bar"><div class="skill-fill" style="width:74%;background:linear-gradient(90deg,var(--accent2),#c084fc)"></div></div>
+            </div>
+            <div class="skill-row">
+              <div class="skill-top"><span>DevOps / Kubernetes</span><span>61%</span></div>
+              <div class="skill-bar"><div class="skill-fill" style="width:61%;background:linear-gradient(90deg,var(--success),#6ee7b7)"></div></div>
+            </div>
+            <div class="skill-row">
+              <div class="skill-top"><span>Node.js / Express</span><span>55%</span></div>
+              <div class="skill-bar"><div class="skill-fill" style="width:55%;background:linear-gradient(90deg,var(--warn),#fbbf24)"></div></div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <span class="card-title">Quick Actions</span>
+            </div>
+            <div class="quick-grid">
+              <div class="quick-card">
+                <div class="quick-ico" style="background:rgba(56,189,248,0.12)">📣</div>
+                <div><div class="q-title">Post Job</div><div class="q-sub">Create listing</div></div>
+              </div>
+              <div class="quick-card">
+                <div class="quick-ico" style="background:rgba(52,211,153,0.12)">🔍</div>
+                <div><div class="q-title">Search Talent</div><div class="q-sub">Find candidates</div></div>
+              </div>
+              <div class="quick-card">
+                <div class="quick-ico" style="background:rgba(129,140,248,0.12)">📅</div>
+                <div><div class="q-title">Schedule</div><div class="q-sub">Book interview</div></div>
+              </div>
+              <div class="quick-card">
+                <div class="quick-ico" style="background:rgba(251,146,60,0.12)">📈</div>
+                <div><div class="q-title">Reports</div><div class="q-sub">View analytics</div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <!-- ════════════════════════════════
+       FOOTER
+  ════════════════════════════════ -->
+  <footer>
+    <div class="footer-main">
+      <div class="footer-brand">
+        <a href="#" class="logo">
+          <div class="logo-icon">🌉</div>
+          <span class="logo-name">Talent<span>Bridge</span></span>
+        </a>
+        <p>Connecting exceptional talent with world-class companies. Build your career or find your next hire, all in one place.</p>
+        <div class="footer-social">
+          <a class="social-btn" href="#">𝕏</a>
+          <a class="social-btn" href="#">in</a>
+          <a class="social-btn" href="#">f</a>
+          <a class="social-btn" href="#">▶</a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>For Job Seekers</h4>
+        <ul>
+          <li><a href="#">Browse Jobs</a></li>
+          <li><a href="#">Company Reviews</a></li>
+          <li><a href="#">Salary Calculator</a></li>
+          <li><a href="#">Resume Builder</a></li>
+          <li><a href="#">Career Advice</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>For Employers</h4>
+        <ul>
+          <li><a href="#">Post a Job</a></li>
+          <li><a href="#">Search Candidates</a></li>
+          <li><a href="#">Pricing Plans</a></li>
+          <li><a href="#">ATS Integration</a></li>
+          <li><a href="#">Employer Branding</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Press Kit</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Service</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2026 <span>TalentBridge</span>. All rights reserved. Made with ♥ in India.</p>
+      <div class="footer-tags">
+        <span class="footer-tag">Jobs in Tech</span>
+        <span class="footer-tag">Remote Work</span>
+        <span class="footer-tag">Fresher Jobs</span>
+        <span class="footer-tag">MNC Hiring</span>
+        <span class="footer-tag">Startup Jobs</span>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
